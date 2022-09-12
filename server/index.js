@@ -11,9 +11,12 @@ app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });
   
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server listening on ${PORT}`);
+// });
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
