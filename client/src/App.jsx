@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
 // import schoolProblems from "./SchoolProblems";
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "./SchoolProblems";
-import Card from '@mui/material/Card';
+import {Card, Typography} from '@mui/material/';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
@@ -13,6 +13,22 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ContactForm from "./components/ContactForm";
 import { display } from "@mui/system";
+
+// function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center' }}>
+//         <Box sx={{ width: '100%', mr: 1 }}>
+//           <LinearProgress variant="determinate" {...props} />
+//         </Box>
+//         <Box sx={{ minWidth: 35 }}>
+//           <Typography variant="body2" color="text.secondary">{`${Math.round(
+//             props.value,
+//           )}%`}</Typography>
+//         </Box>
+//       </Box>
+//     );
+//   }
+
 
 function App() {
     const results = {
@@ -87,9 +103,16 @@ function App() {
             </header>
                 <div className="choices">
                     <div className="progress-container">
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         <Box sx={{ width: '100%' }}>
                             <LinearProgress variant="determinate" value={progress} />
                         </Box>
+                        <Box sx={{ minWidth: 35, p: 1 }}>
+                        <Typography variant="h4" color="text.primary" >{" " + `${Math.round(
+                             (currentSection - 1) * 20,
+                         )}%`}</Typography>
+                         </Box>
+                    </Box>
                     </div>
                     {currentSection < 6 ? 
                         <h2  className="section-header">Section {currentSection + ": " + sectionTitles[currentSection]}</h2>

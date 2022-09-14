@@ -114,3 +114,7 @@ header h1 {
   color:  #26BAEE;
   font-family: 'Paytone One', sans-serif;
 }
+
+.percent {
+  padding-left: 5px;
+}
