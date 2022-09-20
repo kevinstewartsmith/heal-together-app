@@ -4,6 +4,11 @@ import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/mater
 
 
 function ContactForm() {
+
+    function handleChange() {
+        console.log("change!");
+    }
+
     return (
         <div className="contact-form">
             {/* <p className="section-header">Thanks for your input! We want to make public schools better for all student, parents, and staff. YOU can contribute to big and small ways to this movemnt. Please submit the form below.</p> */}
@@ -14,7 +19,7 @@ function ContactForm() {
                 <form>
                     <Grid container spacing={1}>
                         <Grid  xs={12} small={6} item>
-                            <TextField label="First Name" placeholder="Enter first name" variant="outlined" fullWidth required/>
+                            <TextField onChange={handleChange} label="First Name" placeholder="Enter first name" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid  xs={12} small={6} item>
                             <TextField label="Last Name" placeholder="Enter last name" variant="outlined" fullWidth required/>

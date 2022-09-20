@@ -2,35 +2,26 @@ import React, { useState, useEffect } from "react";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
 // import schoolProblems from "./SchoolProblems";
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "./SchoolProblems";
-import {Card, Typography} from '@mui/material/';
-import CardHeader from '@mui/material/CardHeader';
-import Avatar from '@mui/material/Avatar';
+import {Card, Typography, CardHeader, Avatar, Box, LinearProgress} from '@mui/material/';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import { blue, blueGrey, red } from '@mui/material/colors';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ContactForm from "./components/ContactForm";
 import { display } from "@mui/system";
-
-// function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
-//     return (
-//       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-//         <Box sx={{ width: '100%', mr: 1 }}>
-//           <LinearProgress variant="determinate" {...props} />
-//         </Box>
-//         <Box sx={{ minWidth: 35 }}>
-//           <Typography variant="body2" color="text.secondary">{`${Math.round(
-//             props.value,
-//           )}%`}</Typography>
-//         </Box>
-//       </Box>
-//     );
-//   }
-
+import { v4 as uuidv4 } from 'uuid';
+//import { json } from "express";
 
 function App() {
+    const newID = uuidv4()
+    const [id, setId] = useState(newID);
+    
+    useEffect(() => {
+        if (localStorage.getItem("SURVEY_USER_ID") === null) {
+            window.localStorage.setItem("SURVEY_USER_ID", JSON.stringify(id))
+          }
+    }, [id]);
+
     const results = {
         1: {},
         2: {},
@@ -71,7 +62,13 @@ function App() {
         setIssues(items)
         results[currentSection] = items
         //console.log(items);
-        console.log(results);
+        //window.localStorage.setItem("SECTION_" + currentSection, results[currentSection][0].issue)
+        //const wawa = window.localStorage.getItem("SECTION_" + currentSection)
+        //console.log("i" + wawa[0]);
+
+        //console.log(results[1][0]);
+        
+        window.localStorage.setItem("SECTION_" + currentSection, JSON.stringify(results[currentSection]))
     }
 
     function rightArrowClicked() {
@@ -89,11 +86,6 @@ function App() {
     }
 
     const [expanded, setExpanded] = useState(false);
-
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
-
     const [progress, setProgress] = useState(0);
 
     return (
