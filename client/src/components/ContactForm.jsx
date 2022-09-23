@@ -15,21 +15,33 @@ function ContactForm() {
         // console.log(elementsArray[8].value);
 
         const surveyData = {
-            firstName : elementsArray[0].value,
-            lastName :  elementsArray[2].value,
-            email : elementsArray[4].value,
-            phone : elementsArray[6].value,
-            message : elementsArray[8].value,
-            answers: {
-                section1: window.localStorage.getItem("SECTION_1"),
-                section2: window.localStorage.getItem("SECTION_2"),
-                section3: window.localStorage.getItem("SECTION_3"),
-                section4: window.localStorage.getItem("SECTION_4"),
-                section5: window.localStorage.getItem("SECTION_5")
+            "firstName" : elementsArray[0].value,
+            "lastName" :  elementsArray[2].value,
+            "email" : elementsArray[4].value,
+            "phone" : elementsArray[6].value,
+            "message" : elementsArray[8].value,
+            "answers": {
+                "section1": window.localStorage.getItem("SECTION_1"),
+                "section2": window.localStorage.getItem("SECTION_2"),
+                "section3": window.localStorage.getItem("SECTION_3"),
+                "section4": window.localStorage.getItem("SECTION_4"),
+                "section5": window.localStorage.getItem("SECTION_5")
             }
         }
+
+        fetch('/addSurveyResults', {
+            method: 'POST',
+            // We convert the React state to JSON and send it as the POST body
+            body: JSON.stringify(surveyData),
+            headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
+    
+          }).then(function(response) {
+            console.log("First Callback");
+            console.log(response )
+            return response.json();
+          }).then(function(response){ console.log(response) });
         
-        console.log(surveyData);
+        //console.log(surveyData);
         
         
     }
