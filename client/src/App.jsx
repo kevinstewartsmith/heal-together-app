@@ -13,7 +13,14 @@ import { v4 as uuidv4 } from 'uuid';
 //import { json } from "express";
 
 function App() {
+    // window.localStorage.setItem("SECTION_1_CHANGED", JSON.stringify("false"));
+    // window.localStorage.setItem("SECTION_2_CHANGED", JSON.stringify("false"));
+    // window.localStorage.setItem("SECTION_3_CHANGED", JSON.stringify("false"));
+    // window.localStorage.setItem("SECTION_4_CHANGED", JSON.stringify("false"));
+    // window.localStorage.setItem("SECTION_5_CHANGED", JSON.stringify("false"));
+
     const newID = uuidv4()
+
     const [id, setId] = useState(newID);
     
     useEffect(() => {
@@ -61,14 +68,26 @@ function App() {
         items.splice(result.destination.index, 0, reorderedItem)
         setIssues(items)
         results[currentSection] = items
+
         //console.log(items);
         //window.localStorage.setItem("SECTION_" + currentSection, results[currentSection][0].issue)
         //const wawa = window.localStorage.getItem("SECTION_" + currentSection)
         //console.log("i" + wawa[0]);
 
         //console.log(results[1][0]);
-        
+        console.log("changed");
         window.localStorage.setItem("SECTION_" + currentSection, JSON.stringify(results[currentSection]))
+
+        const changedSection = "SECTION_" + currentSection.toString() + "_CHANGED";
+        console.log(changedSection);
+        const localChanged = window.localStorage.getItem(changedSection)
+        console.log("local changed: " + localChanged);
+        if ( localChanged === "false") {
+            
+        }
+        //window.localStorage.setItem("fart", "done")
+        //window.localStorage.setItem("SECTION_1_CHANGED", "rrr")
+        window.localStorage.setItem(changedSection, JSON.stringify("true"))
     }
 
     function rightArrowClicked() {
