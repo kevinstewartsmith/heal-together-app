@@ -13,12 +13,6 @@ import { v4 as uuidv4 } from 'uuid';
 //import { json } from "express";
 
 function App() {
-    // window.localStorage.setItem("SECTION_1_CHANGED", JSON.stringify("false"));
-    // window.localStorage.setItem("SECTION_2_CHANGED", JSON.stringify("false"));
-    // window.localStorage.setItem("SECTION_3_CHANGED", JSON.stringify("false"));
-    // window.localStorage.setItem("SECTION_4_CHANGED", JSON.stringify("false"));
-    // window.localStorage.setItem("SECTION_5_CHANGED", JSON.stringify("false"));
-
     const newID = uuidv4()
 
     const [id, setId] = useState(newID);
@@ -53,11 +47,21 @@ function App() {
         4: curriculumProblems.problems,
         5: physicalSafety.problems 
     }
-    const [issues, setIssues] = useState(sections[currentSection])
+
+    const localStorageIssues = window.localStorage.getItem("SECTION_" + currentSection ) 
+    const localStorageIssuesJSON = JSON.parse(localStorageIssues) 
+    
+
+    const initialIssues = localStorageIssues === null ?  sections[currentSection] : localStorageIssuesJSON
+    console.log("issues");
+    console.log(initialIssues);
+    console.log("current section")
+    console.log(sections[currentSection]);
+    const [issues, setIssues] = useState(initialIssues)
 
     useEffect(() => {
         if (currentSection > 0 && currentSection < 6)
-        setIssues(sections[currentSection])
+        setIssues(initialIssues)
     },[currentSection]); 
 
     function handleOnDragEnd(result) {
