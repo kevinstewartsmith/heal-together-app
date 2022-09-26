@@ -1,22 +1,39 @@
-import React, { useState, useEffect } from "react";
+// eslint-disable-next-line
+import React, { 
+   // eslint-disable-next-line
+    useState, 
+    // eslint-disable-next-line
+    useEffect 
+    // eslint-disable-next-line
+} from "react";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
 // import schoolProblems from "./SchoolProblems";
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "./SchoolProblems";
 import {Card, Typography, CardHeader, Avatar, Box, LinearProgress} from '@mui/material/';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import { blue, blueGrey, red } from '@mui/material/colors';
+import IconButton from '@mui/material/IconButton';
+import { blue } from '@mui/material/colors';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Fab from "@mui/material/Fab";
 import ContactForm from "./components/ContactForm";
-import { display } from "@mui/system";
+import StartDialog from "./components/StartDialog";
 import { v4 as uuidv4 } from 'uuid';
 //import { json } from "express";
+import CountUp from 'react-countup';
+
+
+
 
 function App() {
+//MODAL START
+
+
+//MODAL END
+
+
     console.log(window.innerWidth)
     const newID = uuidv4()
-
+    // eslint-disable-next-line
     const [id, setId] = useState(newID);
     
     useEffect(() => {
@@ -110,7 +127,7 @@ function App() {
         }
     }
 
-    const [expanded, setExpanded] = useState(false);
+    //const [expanded, setExpanded] = useState(false);
     const [progress, setProgress] = useState(0);
 
     return (
@@ -125,9 +142,15 @@ function App() {
                             <LinearProgress variant="determinate" value={progress} />
                         </Box>
                         <Box sx={{ minWidth: 35, p: 1 }}>
-                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BA", fontFamily: 'Paytone One' }} >{" " + `${Math.round(
-                             (currentSection - 1) * 20,
-                         )}%`}</Typography>
+                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >
+                            <CountUp
+                                suffix="%" 
+                                duration={0.25} 
+                                end={Math.round(
+                                (currentSection - 1) * 20,
+                            )} />
+                         </Typography>
+
                          </Box>
                     </Box>
                     </div>
@@ -195,8 +218,11 @@ function App() {
                             :
                         null
                     }
+
                     
                 </div>
+
+                <StartDialog />
 
         </div>
     )    

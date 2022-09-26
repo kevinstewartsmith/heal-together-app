@@ -146,16 +146,16 @@ app.post("/addSurveyResults", (req, res) => {
   const section5 = JSON.parse(data.answers.section5)
   const sectionsArr = [section1,section2,section3,section4,section5]
   //console.log("not shit");
-  //console.log(sectionsArr[0]); 
+  console.log("length" + sectionsArr.length); 
   let array = []
   console.log("dawg");
-  console.log(sectionsArr[0][0].issue)
+  //console.log(sectionsArr[0][0].issue)
   let issueArray = []
 
-  for (let j = 0; j < sectionsArr.length; j++) {
+  for (let j = 0; j < sectionsArr.length - 1; j++) {
     
-    for (let i = 0; i < sectionsArr[j].length; i++) {
-      console.log(sectionsArr[j][i].issue)
+    for (let i = 0; i < sectionsArr[j].length - 1; i++) {
+      //console.log(sectionsArr[j][i].issue)
       const newProblem = new Problem({
         id_num: sectionsArr[j][i].id,
         issue: sectionsArr[j][i].issue
