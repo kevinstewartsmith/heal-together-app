@@ -70,7 +70,7 @@ header h1 {
 .choices {
   background-color: #CAF0F8; 
   height: 100%;
-  width: 60vw;
+  width: 80vw;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 50px;
@@ -89,15 +89,15 @@ header h1 {
 
 .left-arrow {
   position: fixed;
-  left: 9vw;
-  top: 50vh;
+  left: 1.5vw;
+  top: 70vh;
 
 }
 
 .right-arrow {
   position: fixed;
-  right: 9vw;
-  top: 50vh;
+  right: 1.5vw;
+  top: 70vh;
 }
 
 .progress-container {

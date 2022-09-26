@@ -120,15 +120,15 @@ export const operationsProblems = {
     "problems": [
 
         {
-            id: "6",
+            id: "5",
             issue: "The physical condition of the builings present health concerns and/or lack of accessibility."
         },
         {
-            id: "7",
+            id: "6",
             issue: "Students do not have enough access to nutritional food."
         },
         {
-            id: "9",
+            id: "7",
             issue: "Transportation challenges for students."
         },
         {
@@ -136,7 +136,7 @@ export const operationsProblems = {
             issue: "Students do not feel valued, respected, or cared for at their schools."
         },
         {
-            id: "10",
+            id: "9",
             issue: "Students lack access to basic health services."
         },
     ]
@@ -147,23 +147,23 @@ export const supportProblems = {
     "title": "Support Problems",
     "problems": [
         {
-            id: "5",
+            id: "10",
             issue: "Lack of mental health support for students."
         },
         {
-            id: "13",
+            id: "11",
             issue: "There is not enough support for students with disabilties."
         },
         {
-            id: "14",
+            id: "12",
             issue: "There is not enough support for English Language Learners and immigrant families."
         },
         {
-            id: "18",
+            id: "13",
             issue: "Low wages for parents are negatively impacting students."
         },
         {
-            id: "16",
+            id: "14",
             issue: "Students lack access to safe and healthy housing."
         },
     ]
@@ -175,15 +175,15 @@ export const curriculumProblems = {
     "title": "Curricular Problems",
     "problems": [
         {
-            id: "17",
+            id: "15",
             issue: "There are not enough arts, sports, music, enrichment, afterschool and summer programs."
         },
         {
-            id: "11",
+            id: "16",
             issue: "The books and curriculum students learn don't reflect student's identities and interests."
         },
         {
-            id: "12",
+            id: "17",
             issue: "Negative impacts of efforts to ban books and attacks on curriculum teaching honest history."
         },
     ]
@@ -195,15 +195,15 @@ export const physicalSafety = {
     "problems": [
 
         {
-            id: "19",
+            id: "18",
             issue: "There are fears and/or threats of violence at school."
         },
         {
-            id: "20",
+            id: "19",
             issue: "There are fears and/or threats of violence as a result of a lack of gun safety."
         },
         {
-            id: "15",
+            id: "20",
             issue: "There are concerns about having police in schools and how students are treated by them."
         },
     

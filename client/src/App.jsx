@@ -1,11 +1,5 @@
-// eslint-disable-next-line
-import React, { 
-   // eslint-disable-next-line
-    useState, 
-    // eslint-disable-next-line
-    useEffect 
-    // eslint-disable-next-line
-} from "react";
+
+import React, { useState,  useEffect } from "react";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
 // import schoolProblems from "./SchoolProblems";
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "./SchoolProblems";
@@ -214,7 +208,7 @@ function App() {
                     }
                         
                     {currentSection < 6 ?
-                        <div className="right-arrow"><div className="right-arrow-div"><Fab color="primary" sx={{  width: 80, height: 80 }}><ArrowForwardIosIcon sx={{ marginLeft: 1, fontSize: 80, color: "white" }} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
+                        <div className="right-arrow"><div className="right-arrow-div"><Fab onKeyPress={console.log("Right arrow pressed")} color="primary" sx={{  width: 80, height: 80 }}><ArrowForwardIosIcon sx={{ marginLeft: 1, fontSize: 80, color: "white" }} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
                             :
                         null
                     }

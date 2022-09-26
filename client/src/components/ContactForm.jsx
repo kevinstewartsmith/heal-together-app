@@ -1,11 +1,24 @@
 import React from "react";
 import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/material';
-
+import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "../SchoolProblems";
 
 
 function ContactForm() {
+    const section1 = window.localStorage.getItem("SECTION_1") !== null ? window.localStorage.getItem("SECTION_1") : JSON.stringify(generalSchoolProblems.problems);
+    const section2 = window.localStorage.getItem("SECTION_2") !== null ? window.localStorage.getItem("SECTION_2") : JSON.stringify(operationsProblems.problems);
+    const section3 = window.localStorage.getItem("SECTION_3") !== null ? window.localStorage.getItem("SECTION_3") : JSON.stringify(supportProblems.problems);
+    const section4 = window.localStorage.getItem("SECTION_4") !== null ? window.localStorage.getItem("SECTION_4") : JSON.stringify(curriculumProblems.problems);
+    const section5 = window.localStorage.getItem("SECTION_5") !== null ? window.localStorage.getItem("SECTION_5") : JSON.stringify(physicalSafety.problems);
+   // console.log("section1 bruh");
+   // console.log(section1);
+   console.log("Local storage type");
+   console.log(typeof(window.localStorage.getItem("SECTION_1") ));
+   console.log("native data");
+   console.log(typeof(generalSchoolProblems.problems));
+   console.log(generalSchoolProblems.problems);
 
     function submitClicked(event) {
+        //console.log(section1);
         event.preventDefault()
         const elementsArray = event.target.elements
         // console.log(elementsArray[0].value);
@@ -21,11 +34,11 @@ function ContactForm() {
             "phone" : elementsArray[6].value,
             "message" : elementsArray[8].value,
             "answers": {
-                "section1": window.localStorage.getItem("SECTION_1"),
-                "section2": window.localStorage.getItem("SECTION_2"),
-                "section3": window.localStorage.getItem("SECTION_3"),
-                "section4": window.localStorage.getItem("SECTION_4"),
-                "section5": window.localStorage.getItem("SECTION_5")
+                "section1": section1,
+                "section2": section2,
+                "section3": section3,
+                "section4": section4,
+                "section5": section5 
             }
         }
 
