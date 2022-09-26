@@ -105,7 +105,11 @@ header h1 {
   padding-top: 15px;
   margin-top: 10px;
 }
-
+.left-arrow-div {
+  display: inline;
+  /* display: flex;
+  align-items: center; */
+}
 .right-arrow-div {
   display: inline;
 }

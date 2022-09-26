@@ -7,12 +7,14 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import { blue, blueGrey, red } from '@mui/material/colors';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Fab from "@mui/material/Fab";
 import ContactForm from "./components/ContactForm";
 import { display } from "@mui/system";
 import { v4 as uuidv4 } from 'uuid';
 //import { json } from "express";
 
 function App() {
+    console.log(window.innerWidth)
     const newID = uuidv4()
 
     const [id, setId] = useState(newID);
@@ -123,7 +125,7 @@ function App() {
                             <LinearProgress variant="determinate" value={progress} />
                         </Box>
                         <Box sx={{ minWidth: 35, p: 1 }}>
-                        <Typography variant="h4" color="text.primary" >{" " + `${Math.round(
+                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BA", fontFamily: 'Paytone One' }} >{" " + `${Math.round(
                              (currentSection - 1) * 20,
                          )}%`}</Typography>
                          </Box>
@@ -183,13 +185,13 @@ function App() {
                             :<ContactForm />}
                     
                     {currentSection > 1 ?
-                        <div className="left-arrow"><ArrowBackIosIcon  sx={{ fontSize: 80 }} color="primary"  onClick={leftArrowClicked}/></div>
+                        <div className="left-arrow"><div className="left-arrow-div"><Fab color="primary" sx={{  width: 80, height: 80 }} onClick={leftArrowClicked}><ArrowBackIosIcon sx={{ marginLeft: 4, fontSize: 80, color:"white"}} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
                             :
                         null
                     }
                         
                     {currentSection < 6 ?
-                        <div className="right-arrow"><div className="right-arrow-div"><ArrowForwardIosIcon sx={{ fontSize: 80 }} color="primary" onClick={rightArrowClicked}/></div></div>
+                        <div className="right-arrow"><div className="right-arrow-div"><Fab color="primary" sx={{  width: 80, height: 80 }}><ArrowForwardIosIcon sx={{ marginLeft: 1, fontSize: 80, color: "white" }} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
                             :
                         null
                     }

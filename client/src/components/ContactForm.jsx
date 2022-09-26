@@ -42,7 +42,7 @@ function ContactForm() {
           }).then(function(response){ console.log(response) });
         
         //console.log(surveyData);
-        
+        window.localStorage.clear();
         
     }
 
