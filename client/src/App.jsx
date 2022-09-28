@@ -140,7 +140,7 @@ function App() {
                         <h2  className="section-header">FINISHED!</h2>
                     }
                     {currentSection === 7 ?
-                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >You may close this window.</Typography> : null
+                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window.</Typography> : null
                     }
                     {currentSection > 0 && currentSection < 6 ?  
                             <DragDropContext onDragEnd={handleOnDragEnd} >

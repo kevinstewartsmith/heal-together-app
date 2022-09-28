@@ -74,7 +74,7 @@ export default function StartDialog() {
         </BootstrapDialogTitle>
         <DialogContent dividers >
           <Typography gutterBottom sx={{ fontFamily: 'Paytone One' }}>
-            Thanks for taking time to fill out the Back2School mini-survey. We'll make this quick! 
+            Thanks for taking time to fill out the Back2School quick survey. We'll make this quick! 
           </Typography>
           <Typography gutterBottom sx={{ fontFamily: 'Paytone One' }}>
           Simply drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.
