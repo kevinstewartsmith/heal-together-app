@@ -140,7 +140,7 @@ function App() {
                         <h2  className="section-header">FINISHED!</h2>
                     }
                     {currentSection === 7 ?
-                      <h1>You may close this window</h1> : null
+                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >You may close this window.</Typography> : null
                     }
                     {currentSection > 0 && currentSection < 6 ?  
                             <DragDropContext onDragEnd={handleOnDragEnd} >
@@ -190,7 +190,7 @@ function App() {
                             </DragDropContext>
                             : currentSection !== 7 ? <ContactForm submitButtonClicked={submitButtonClicked} /> : null}
                     
-                    {currentSection > 1 ?
+                    {currentSection > 1 && currentSection !== 7 ?
                         <div className="left-arrow"><div className="left-arrow-div"><Fab color="primary" sx={{  width: 80, height: 80 }} onClick={leftArrowClicked}><ArrowBackIosIcon sx={{ marginLeft: 4, fontSize: 80, color:"white"}} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
                             :
                         null
