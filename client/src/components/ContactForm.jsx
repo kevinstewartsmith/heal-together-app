@@ -68,8 +68,8 @@ function ContactForm(props) {
        // submitClicked()
        //setThankYouDialogOpened(!thankYouDialogOpened)
        //upTheClickCounter()
-       thankYou()
-        
+       //thankYou()
+       props.submitButtonClicked() 
     }
 
     return (
