@@ -18,8 +18,9 @@ app.use(bodyParser.urlencoded({
 }));
 //console.log(password.getPassword());
 const pw = password.getPassword()
-const connect = "mongodb+srv://down-home:" + pw + "@cluster0.yudl1ve.mongodb.net/HEAL-DB"
-mongoose.connect(connect).then(()=>console.log('connected')).catch(e=>console.log(e));
+const URL = password.getConnect()
+const connect = URL
+mongoose.connect(connect || process.env.connect).then(()=>console.log('connected')).catch(e=>console.log(e));
 
 //?retryWrites=true&w=majority")
 

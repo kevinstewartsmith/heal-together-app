@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/material';
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "../SchoolProblems";
 import ThankYouDialog from "./ThankYouDialog";
@@ -6,10 +6,10 @@ import ThankYouDialog from "./ThankYouDialog";
 function ContactForm(props) {
     const [thankYouDialogOpened, setThankYouDialogOpened] = useState(false)
     
-    let clickCounter = 0
-    function upTheClickCounter() {
-       clickCounter++
-    }
+   // let clickCounter = 0
+    // function upTheClickCounter() {
+    //    clickCounter++
+    // }
     function thankYou() { setThankYouDialogOpened(!thankYouDialogOpened) }
     //useEffect(() => {setThankYouDialogOpened(!thankYouDialogOpened)}, [clickCounter])
 
