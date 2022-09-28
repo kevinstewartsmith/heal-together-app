@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/material';
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "../SchoolProblems";
+import ThankYouDialog from "./ThankYouDialog";
 
+function ContactForm(props) {
+    const [thankYouDialogOpened, setThankYouDialogOpened] = useState(false)
+    
+    let clickCounter = 0
+    function upTheClickCounter() {
+       clickCounter++
+    }
+    function thankYou() { setThankYouDialogOpened(!thankYouDialogOpened) }
+    //useEffect(() => {setThankYouDialogOpened(!thankYouDialogOpened)}, [clickCounter])
 
-function ContactForm() {
     const section1 = window.localStorage.getItem("SECTION_1") !== null ? window.localStorage.getItem("SECTION_1") : JSON.stringify(generalSchoolProblems.problems);
     const section2 = window.localStorage.getItem("SECTION_2") !== null ? window.localStorage.getItem("SECTION_2") : JSON.stringify(operationsProblems.problems);
     const section3 = window.localStorage.getItem("SECTION_3") !== null ? window.localStorage.getItem("SECTION_3") : JSON.stringify(supportProblems.problems);
@@ -56,6 +65,10 @@ function ContactForm() {
         
         //console.log(surveyData);
         window.localStorage.clear();
+       // submitClicked()
+       //setThankYouDialogOpened(!thankYouDialogOpened)
+       //upTheClickCounter()
+       thankYou()
         
     }
 
@@ -91,6 +104,8 @@ function ContactForm() {
                 </CardContent>
                 
             </Card>
+
+            {thankYouDialogOpened  ? <ThankYouDialog submitted={thankYouDialogOpened} submitButtonClicked={props.submitButtonClicked} /> : null}
         </div>
     );
 }

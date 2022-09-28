@@ -1,7 +1,6 @@
 
 import React, { useState,  useEffect } from "react";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
-// import schoolProblems from "./SchoolProblems";
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "./SchoolProblems";
 import {Card, Typography, CardHeader, Avatar, Box, LinearProgress} from '@mui/material/';
 import IconButton from '@mui/material/IconButton';
@@ -12,22 +11,12 @@ import Fab from "@mui/material/Fab";
 import ContactForm from "./components/ContactForm";
 import StartDialog from "./components/StartDialog";
 import { v4 as uuidv4 } from 'uuid';
-//import { json } from "express";
 import CountUp from 'react-countup';
 
 
-
-
 function App() {
-//MODAL START
-
-
-//MODAL END
-
-
     console.log(window.innerWidth)
     const newID = uuidv4()
-    // eslint-disable-next-line
     const [id, setId] = useState(newID);
     
     useEffect(() => {
@@ -85,13 +74,6 @@ function App() {
         items.splice(result.destination.index, 0, reorderedItem)
         setIssues(items)
         results[currentSection] = items
-
-        //console.log(items);
-        //window.localStorage.setItem("SECTION_" + currentSection, results[currentSection][0].issue)
-        //const wawa = window.localStorage.getItem("SECTION_" + currentSection)
-        //console.log("i" + wawa[0]);
-
-        //console.log(results[1][0]);
         console.log("changed");
         window.localStorage.setItem("SECTION_" + currentSection, JSON.stringify(results[currentSection]))
 
@@ -102,8 +84,7 @@ function App() {
         if ( localChanged === "false") {
             
         }
-        //window.localStorage.setItem("fart", "done")
-        //window.localStorage.setItem("SECTION_1_CHANGED", "rrr")
+
         window.localStorage.setItem(changedSection, JSON.stringify("true"))
     }
 
@@ -121,7 +102,10 @@ function App() {
         }
     }
 
-    //const [expanded, setExpanded] = useState(false);
+    function submitButtonClicked() {
+        setCurrentSection(7)
+    }
+
     const [progress, setProgress] = useState(0);
 
     return (
@@ -130,28 +114,33 @@ function App() {
                 <h1>Back <p style={{color:"red", display:"inline"}}>2</p> School Quick Survey</h1>
             </header>
                 <div className="choices">
+                { currentSection !== 7 ?
                     <div className="progress-container">
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={{ width: '100%' }}>
-                            <LinearProgress variant="determinate" value={progress} />
-                        </Box>
-                        <Box sx={{ minWidth: 35, p: 1 }}>
-                        <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >
-                            <CountUp
-                                suffix="%" 
-                                duration={0.25} 
-                                end={Math.round(
-                                (currentSection - 1) * 20,
-                            )} />
-                         </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Box sx={{ width: '100%' }}>
+                                <LinearProgress variant="determinate" value={progress} />
+                            </Box>
+                            <Box sx={{ minWidth: 35, p: 1 }}>
+                            <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >
+                                <CountUp
+                                    suffix="%" 
+                                    duration={0.25} 
+                                    end={Math.round(
+                                    (currentSection - 1) * 20,
+                                )} />
+                            </Typography>
 
-                         </Box>
-                    </Box>
-                    </div>
-                    {currentSection < 6 ? 
+                            </Box>
+                        </Box>
+                    </div> : null }
+                    
+                    {currentSection < 6 && currentSection !== 7 ? 
                         <h2  className="section-header">Section {currentSection + ": " + sectionTitles[currentSection]}</h2>
                             :
                         <h2  className="section-header">FINISHED!</h2>
+                    }
+                    {currentSection === 7 ?
+                      <h1>You may close this window</h1> : null
                     }
                     {currentSection > 0 && currentSection < 6 ?  
                             <DragDropContext onDragEnd={handleOnDragEnd} >
@@ -174,7 +163,7 @@ function App() {
                                                                     <CardHeader
                                                                         avatar={
                                                                         <Avatar sx={{ bgcolor: blue[50] }} aria-label="recipe">
-                                                                                <div className="number-box"><h1>{index + 1+ " "}</h1></div>
+                                                                                <div className="number-box"><h1>{index + 1 + " "}</h1></div>
                                                                         </Avatar>
                                                                     }
                                                                     action={
@@ -199,7 +188,7 @@ function App() {
                                 
                                 </Droppable>
                             </DragDropContext>
-                            :<ContactForm />}
+                            : currentSection !== 7 ? <ContactForm submitButtonClicked={submitButtonClicked} /> : null}
                     
                     {currentSection > 1 ?
                         <div className="left-arrow"><div className="left-arrow-div"><Fab color="primary" sx={{  width: 80, height: 80 }} onClick={leftArrowClicked}><ArrowBackIosIcon sx={{ marginLeft: 4, fontSize: 80, color:"white"}} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
@@ -216,7 +205,8 @@ function App() {
                     
                 </div>
 
-                <StartDialog />
+                <StartDialog  />
+                
 
         </div>
     )    
