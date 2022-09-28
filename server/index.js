@@ -17,10 +17,10 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 //console.log(password.getPassword());
-const pw = password.getPassword()
-const URL = password.getConnect()
-const connect = URL
-mongoose.connect(process.env.connect).then(()=>console.log('connected')).catch(e=>console.log(e));
+// const pw = password.getPassword()
+// const URL = password.getConnect()
+// const connect = URL
+mongoose.connect(process.env.MONGODB_URI).then(()=>console.log('connected')).catch(e=>console.log(e));
 
 //?retryWrites=true&w=majority")
 
