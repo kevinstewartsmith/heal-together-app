@@ -16,7 +16,20 @@ import CountUp from 'react-countup';
 
 function App() {
     console.log(window.innerWidth)
+    const windowWidth = window.innerWidth
+
+    const mobileSizes = {
+        header: "1.5rem"
+    }
+    const desktopSizes = {
+        header: null
+    }
+    const sizes = windowWidth > 720 ?  desktopSizes :  mobileSizes
+    
+
+    
     const newID = uuidv4()
+    // eslint-disable-next-line 
     const [id, setId] = useState(newID);
     
     useEffect(() => {
@@ -111,7 +124,7 @@ function App() {
     return (
         <div>
             <header>
-                <h1>Back <p style={{color:"red", display:"inline"}}>2</p> School Quick Survey</h1>
+                <h1 style={{ fontSize: sizes.header }} >Back <p style={{color:"red", display:"inline", fontSize: sizes.header }}>2</p> School Quick Survey</h1>
             </header>
                 <div className="choices">
                 { currentSection !== 7 ?

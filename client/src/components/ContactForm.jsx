@@ -4,13 +4,14 @@ import {generalSchoolProblems, operationsProblems, supportProblems, curriculumPr
 import ThankYouDialog from "./ThankYouDialog";
 
 function ContactForm(props) {
+    // eslint-disable-next-line 
     const [thankYouDialogOpened, setThankYouDialogOpened] = useState(false)
     
    // let clickCounter = 0
     // function upTheClickCounter() {
     //    clickCounter++
     // }
-    function thankYou() { setThankYouDialogOpened(!thankYouDialogOpened) }
+    //function thankYou() { setThankYouDialogOpened(!thankYouDialogOpened) }
     //useEffect(() => {setThankYouDialogOpened(!thankYouDialogOpened)}, [clickCounter])
 
     const section1 = window.localStorage.getItem("SECTION_1") !== null ? window.localStorage.getItem("SECTION_1") : JSON.stringify(generalSchoolProblems.problems);
