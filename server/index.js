@@ -4,7 +4,7 @@ const bodyParser = require("body-parser")
 const _ = require("lodash")
 const mongoose = require("mongoose")
 //import password as password from "./pw"
-const password = require("./pw")
+//const password = require("./pw")
 
 const PORT = process.env.PORT || 3333;
 
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 //console.log(password.getPassword());
 // const pw = password.getPassword()
- const URL = password.getConnect()
+const URL = password.getConnect()
 // const connect = URL
 //mongoose.connect(process.env.MONGODB_URI).then(()=>console.log('connected')).catch(e=>console.log(e));
 mongoose.connect(URL).then(()=>console.log('connected')).catch(e=>console.log(e));
