@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({
 // const pw = password.getPassword()
 const URL = password.getConnect()
 // const connect = URL
-//mongoose.connect(process.env.MONGODB_URI).then(()=>console.log('connected')).catch(e=>console.log(e));
-mongoose.connect(URL).then(()=>console.log('connected')).catch(e=>console.log(e));
+mongoose.connect(process.env.MONGODB_URI).then(()=>console.log('connected')).catch(e=>console.log(e));
+//mongoose.connect(URL).then(()=>console.log('connected')).catch(e=>console.log(e));
 
 //?retryWrites=true&w=majority")
 
