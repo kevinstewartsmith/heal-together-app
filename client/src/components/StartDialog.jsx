@@ -70,13 +70,13 @@ export default function StartDialog() {
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose} >
           
-          <Typography sx={{ fontFamily: 'Paytone One' , color: "#26BAEE", fontSize: "1.5rem" }}>Welcome to the Back2School Quick Survey!</Typography>
+          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>Welcome to the Back2School Quick Survey!</Typography>
         </BootstrapDialogTitle>
         <DialogContent dividers >
-          <Typography gutterBottom sx={{ fontFamily: 'Paytone One' }}>
+          <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }}>
             Thanks for taking time to fill out the Back2School quick survey. We'll make this quick! 
           </Typography>
-          <Typography gutterBottom sx={{ fontFamily: 'Paytone One' }}>
+          <Typography gutterBottom sx={{color: "#A6A9B6",fontFamily: 'Paytone One' }}>
           Simply drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.
           </Typography>
           <Typography gutterBottom>
@@ -85,7 +85,7 @@ export default function StartDialog() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-          <Typography sx={{ fontFamily: 'Paytone One' , color: "#26BAEE", fontSize: "1.5rem" }}>Let's Do This!</Typography>
+          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>Let's Do This!</Typography>
           </Button>
         </DialogActions>
       </BootstrapDialog>

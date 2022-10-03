@@ -12,6 +12,8 @@ import ContactForm from "./components/ContactForm";
 import StartDialog from "./components/StartDialog";
 import { v4 as uuidv4 } from 'uuid';
 import CountUp from 'react-countup';
+import healHeader from './heal-header.png';
+import { color } from "@mui/system";
 
 
 function App() {
@@ -124,17 +126,26 @@ function App() {
     return (
         <div>
             <header>
-                <h1 style={{ fontSize: sizes.header }} >Back <p style={{color:"red", display:"inline", fontSize: sizes.header }}>2</p> School Quick Survey</h1>
+                {/* <h1 style={{ fontSize: sizes.header }} >Back <p style={{color:"red", display:"inline", fontSize: sizes.header }}>2</p> School Quick Survey</h1> */}
+               <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}> <img src={healHeader} style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '30%'}} alt="Logo" /></div>
+                {/* <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
+                    <Image
+                        source={healHeader}
+                        resizeMode="contain"
+                        style={{ width: 98 }}
+                    />
+                </View> */}
             </header>
                 <div className="choices">
                 { currentSection !== 7 ?
                     <div className="progress-container">
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             <Box sx={{ width: '100%' }}>
-                                <LinearProgress variant="determinate" value={progress} />
+                                <LinearProgress sx={{"& .MuiLinearProgress-bar": { backgroundColor: "#7b9ee4" },color: "#bfa3f7"}}  variant="determinate" value={progress} />
                             </Box>
                             <Box sx={{ minWidth: 35, p: 1 }}>
-                            <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >
+                            <Typography variant="h5" color="text.primary" sx={{ color: "#bfa3f7", fontFamily: 'Paytone One' }} >
+                            {/* "#26BAEE" */}
                                 <CountUp
                                     suffix="%" 
                                     duration={0.25} 
@@ -150,7 +161,7 @@ function App() {
                     {currentSection < 6 && currentSection !== 7 ? 
                         <h2  className="section-header">Section {currentSection + ": " + sectionTitles[currentSection]}</h2>
                             :
-                        <h2  className="section-header">FINISHED!</h2>
+                        <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}><h2  className="section-header" style={{fontSize: "2.5em"}}>FINISHED!</h2></div>
                     }
                     {currentSection === 7 ?
                         <Typography variant="h5" color="text.primary" sx={{ color: "#26BAEE", fontFamily: 'Paytone One' }} >Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window.</Typography> : null
@@ -175,7 +186,7 @@ function App() {
                                                                 <Card sx={{ width: 1.0 }}>
                                                                     <CardHeader
                                                                         avatar={
-                                                                        <Avatar sx={{ bgcolor: blue[50] }} aria-label="recipe">
+                                                                        <Avatar sx={{ bgcolor: "#7b9ee4" }} aria-label="recipe">
                                                                                 <div className="number-box"><h1>{index + 1 + " "}</h1></div>
                                                                         </Avatar>
                                                                     }
@@ -204,13 +215,13 @@ function App() {
                             : currentSection !== 7 ? <ContactForm submitButtonClicked={submitButtonClicked} /> : null}
                     
                     {currentSection > 1 && currentSection !== 7 ?
-                        <div className="left-arrow"><div className="left-arrow-div"><Fab color="primary" sx={{  width: 80, height: 80 }} onClick={leftArrowClicked}><ArrowBackIosIcon sx={{ marginLeft: 4, fontSize: 80, color:"white"}} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
+                        <div className="left-arrow"><div className="left-arrow-div"><Fab color="primary"  sx={{ backgroundColor:"#7b9ee4", width: 80, height: 80}} onClick={leftArrowClicked}><ArrowBackIosIcon sx={{ marginLeft: 4, fontSize: 80, color:"white"}} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
                             :
                         null
                     }
                         
                     {currentSection < 6 ?
-                        <div className="right-arrow"><div className="right-arrow-div"><Fab onKeyPress={console.log("Right arrow pressed")} color="primary" sx={{  width: 80, height: 80 }}><ArrowForwardIosIcon sx={{ marginLeft: 1, fontSize: 80, color: "white" }} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
+                        <div className="right-arrow"><div className="right-arrow-div"><Fab onKeyPress={console.log("Right arrow pressed")} color="primary" sx={{ backgroundColor:"#7b9ee4", width: 80, height: 80 }}><ArrowForwardIosIcon sx={{ marginLeft: 1, fontSize: 80, color: "white" }} color="primary" onClick={rightArrowClicked}/></Fab></div></div>
                             :
                         null
                     }

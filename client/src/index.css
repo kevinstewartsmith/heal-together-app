@@ -32,11 +32,12 @@ code {
 
 
 header {
-  background-color: #26BAEE;
+  /* background-color: #26BAEE; */
+  background-color: #CAF0F8;
   margin: 0px auto;
   padding: 5px 8px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-  height: 80px;
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
+  height: 225px;
 }
 
 header h1 {
@@ -81,7 +82,8 @@ header h1 {
   /* width:  1vw; */
 }
 .number-box h1 {
-  color: rgb(207, 207, 207);
+  color: rgb(241, 241, 241);
+  /* color: white; */
   font-size: 1.5rem;
   text-align: right;
   text-shadow: -1px -1px 0 rgba(35, 35, 35, 0.554), 1px -1px 0 rgb(35, 35, 35, 0.554), -1px 1px 0 rgb(35, 35, 35, 0.554), 1px 1px 0 rgb(35,35,35, 0.554);
@@ -115,7 +117,7 @@ header h1 {
 }
 
 .section-header {
-  color:  #26BAEE;
+  color:  #af8bf8;
   font-family: 'Paytone One', sans-serif;
 }
 
