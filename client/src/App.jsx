@@ -4,7 +4,7 @@ import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "./SchoolProblems";
 import {Card, Typography, CardHeader, Avatar, Box, LinearProgress} from '@mui/material/';
 import IconButton from '@mui/material/IconButton';
-import { blue } from '@mui/material/colors';
+//import { blue } from '@mui/material/colors';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Fab from "@mui/material/Fab";
@@ -13,7 +13,7 @@ import StartDialog from "./components/StartDialog";
 import { v4 as uuidv4 } from 'uuid';
 import CountUp from 'react-countup';
 import healHeader from './heal-header.png';
-import { color } from "@mui/system";
+//import { color } from "@mui/system";
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
     const desktopSizes = {
         header: null
     }
+    // eslint-disable-next-line
     const sizes = windowWidth > 720 ?  desktopSizes :  mobileSizes
     
 
