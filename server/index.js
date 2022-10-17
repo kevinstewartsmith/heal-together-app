@@ -134,8 +134,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/results', (req, res) => {
+  let data = []
+  Responses.find({},function(err,foundResponses) {
+    if (err) {
+      console.log(err);
+    } else {
+      data = foundResponses
+      //res.send(data)
+      res.json({ message: "Hello from server!" });
+    }
+  }) 
   
-  res.json({ message: "Hello from server!" });
+  
 });
 
 app.post("/addSurveyResults", (req, res) => {
