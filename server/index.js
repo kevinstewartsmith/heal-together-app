@@ -141,7 +141,8 @@ app.get('/results', (req, res) => {
     } else {
       data = foundResponses
       //res.send(data)
-      res.json({ message: "Hello from server!" });
+      //res.json({ message: "Hello from server!" });
+      res.json(data)
     }
   }) 
   
