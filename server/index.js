@@ -133,6 +133,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
+app.get('/results', (req, res) => {
+  
+  res.json({ message: "Hello from server!" });
+});
+
 app.post("/addSurveyResults", (req, res) => {
   const data = req.body
   const firstName = data.firstName
