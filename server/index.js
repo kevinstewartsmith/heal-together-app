@@ -149,6 +149,22 @@ app.get('/results', (req, res) => {
   
 });
 
+app.get('/results/:api', (req, res) => {
+  let data = []
+  Responses.find({},function(err,foundResponses) {
+    if (err) {
+      console.log(err);
+    } else {
+      data = foundResponses
+      //res.send(data)
+      //res.json({ message: "Hello from server!" });
+      res.json(data)
+    }
+  }) 
+  
+  
+});
+
 app.post("/addSurveyResults", (req, res) => {
   const data = req.body
   const firstName = data.firstName
