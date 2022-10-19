@@ -133,21 +133,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-app.get('/results', (req, res) => {
-  let data = []
-  Responses.find({},function(err,foundResponses) {
-    if (err) {
-      console.log(err);
-    } else {
-      data = foundResponses
-      //res.send(data)
-      //res.json({ message: "Hello from server!" });
-      res.json(data)
-    }
-  }) 
+// app.get('/results', (req, res) => {
+//   let data = []
+//   Responses.find({},function(err,foundResponses) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       data = foundResponses
+//       //res.send(data)
+//       //res.json({ message: "Hello from server!" });
+//       res.json(data)
+//     }
+//   }) 
   
   
-});
+// });
 
 app.get('/results/:api', (req, res) => {
   let data = []
