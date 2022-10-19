@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>console.log('connected')).cat
 //mongoose.connect(URL).then(()=>console.log('connected')).catch(e=>console.log(e));
 
 //?retryWrites=true&w=majority")
-
+const apiKey = process.env.API_KEY
 
 const surveyResponses = {
   first_name: "",
@@ -151,16 +151,21 @@ app.get('/results', (req, res) => {
 
 app.get('/results/:api', (req, res) => {
   let data = []
-  Responses.find({},function(err,foundResponses) {
-    if (err) {
-      console.log(err);
-    } else {
-      data = foundResponses
-      //res.send(data)
-      //res.json({ message: "Hello from server!" });
-      res.json(data)
-    }
-  }) 
+  const apiParam = req.params.api
+  if (apiParam === apiKey) {
+    Responses.find({},function(err,foundResponses) {
+      if (err) {
+        console.log(err);
+      } else {
+        data = foundResponses
+        //res.send(data)
+        //res.json({ message: "Hello from server!" });
+        res.json(data)
+      }
+    }) 
+} else {
+  res.json({"message": "nope!"})
+}
   
   
 });
