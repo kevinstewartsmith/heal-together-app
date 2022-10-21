@@ -180,6 +180,7 @@ app.post("/addSurveyResults", (req, res) => {
   const lastName = data.lastName
   const email = data.email
   const phone = data.phone
+  const zipCode = data.zipCode
   const message = data.message
   const answers = data.answers
   const section1 = JSON.parse(data.answers.section1)
@@ -230,6 +231,7 @@ app.post("/addSurveyResults", (req, res) => {
     last_name: lastName,
     email: email,
     phone: phone,
+    zipCode: zipCode,
     message: message,
     answers: newAnswer
   })
