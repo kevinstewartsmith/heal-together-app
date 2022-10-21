@@ -37,7 +37,13 @@ function ContactForm(props) {
         // console.log(elementsArray[4].value);
         // console.log(elementsArray[6].value);
         // console.log(elementsArray[8].value);
-        
+        const date = new Date();
+        console.log(
+            date.toLocaleString('en-US', {
+              timeZone: 'America/New_York',
+            }),
+          );
+
         const surveyData = {
             "firstName" : elementsArray[0].value,
             "lastName" :  elementsArray[2].value,
