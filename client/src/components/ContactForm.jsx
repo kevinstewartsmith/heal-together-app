@@ -28,6 +28,9 @@ function ContactForm(props) {
    console.log(generalSchoolProblems.problems);
 
     function submitClicked(event) {
+        console.log(Date.prototype.getDate());
+        console.log(Date.prototype.getDay());
+        console.log(Date.prototype.getFullYear());
         //console.log(section1);
         event.preventDefault()
         const elementsArray = event.target.elements
