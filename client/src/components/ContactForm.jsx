@@ -28,9 +28,7 @@ function ContactForm(props) {
    console.log(generalSchoolProblems.problems);
 
     function submitClicked(event) {
-        console.log(Date.prototype.getDate());
-        console.log(Date.prototype.getDay());
-        console.log(Date.prototype.getFullYear());
+       
         //console.log(section1);
         event.preventDefault()
         const elementsArray = event.target.elements
@@ -39,7 +37,9 @@ function ContactForm(props) {
         // console.log(elementsArray[4].value);
         // console.log(elementsArray[6].value);
         // console.log(elementsArray[8].value);
-
+        console.log(Date.prototype.getDate());
+        console.log(Date.prototype.getDay());
+        console.log(Date.prototype.getFullYear());
         const surveyData = {
             "firstName" : elementsArray[0].value,
             "lastName" :  elementsArray[2].value,
