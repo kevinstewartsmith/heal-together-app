@@ -42,8 +42,8 @@ function ContactForm(props) {
             "lastName" :  elementsArray[2].value,
             "email" : elementsArray[4].value,
             "phone" : elementsArray[6].value,
-            "zipCode" : "55555",
-            "message" : elementsArray[8].value,
+            "zipCode" : elementsArray[8].value,
+            "message" : elementsArray[10].value,
             "answers": {
                 "section1": section1,
                 "section2": section2,
@@ -94,6 +94,9 @@ function ContactForm(props) {
                         </Grid>
                         <Grid xs={12} item>
                             <TextField name="phone"  type="number" label="Phone" placeholder="Enter phone number" variant="outlined" fullWidth />
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField name="zipCode"  type="number" label="Zip Code" placeholder="Enter zip code" variant="outlined" fullWidth required />
                         </Grid>
                         <Grid xs={12} item>
                             <TextField  name="message"  label="Message" multiline rows={4} placeholder="If you have any questions, you can send us a message!" variant="outlined" fullWidth />
