@@ -38,13 +38,14 @@ function ContactForm(props) {
         // console.log(elementsArray[6].value);
         // console.log(elementsArray[8].value);
         const date = new Date();
-        console.log(
-            date.toLocaleString('en-US', {
-              timeZone: 'America/New_York',
-            }),
-          );
-
+        // console.log(
+        //     date.toLocaleString('en-US', {
+        //       timeZone: 'America/New_York',
+        //     }),
+        //   );
+        const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
         const surveyData = {
+            "dateTime" : dateTime,
             "firstName" : elementsArray[0].value,
             "lastName" :  elementsArray[2].value,
             "email" : elementsArray[4].value,

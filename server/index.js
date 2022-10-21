@@ -84,6 +84,10 @@ const answerSchema = mongoose.Schema({
 })
 
 const responseSchema = mongoose.Schema({
+  date_time: {
+    type: String,
+    required: true
+  },
   first_name: {
     type: String,
     required: true
@@ -100,7 +104,7 @@ const responseSchema = mongoose.Schema({
     type: String,
     required: false
   },
-  zipCode: {
+  zip_code: {
     type: String,
     required: true
   },
@@ -176,6 +180,7 @@ app.get('/results/:api', (req, res) => {
 
 app.post("/addSurveyResults", (req, res) => {
   const data = req.body
+  const dateTime = data.dateTime
   const firstName = data.firstName
   const lastName = data.lastName
   const email = data.email
@@ -227,11 +232,12 @@ app.post("/addSurveyResults", (req, res) => {
   newAnswer.save()
 
   const newResponse = new Responses({
+    date_time: dateTime,
     first_name: firstName,
     last_name: lastName,
     email: email,
     phone: phone,
-    zipCode: zipCode,
+    zip_code: zipCode,
     message: message,
     answers: newAnswer
   })
