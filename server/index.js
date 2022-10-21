@@ -100,6 +100,10 @@ const responseSchema = mongoose.Schema({
     type: String,
     required: false
   },
+  zipCode: {
+    type: String,
+    required: true
+  },
   message: {
     type: String,
     required: false

@@ -42,6 +42,7 @@ function ContactForm(props) {
             "lastName" :  elementsArray[2].value,
             "email" : elementsArray[4].value,
             "phone" : elementsArray[6].value,
+            "zipCode" : "55555",
             "message" : elementsArray[8].value,
             "answers": {
                 "section1": section1,
