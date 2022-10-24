@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/material';
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "../SchoolProblems";
 import ThankYouDialog from "./ThankYouDialog";
-import reCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from "react-google-recaptcha"
+//onst reCAPTCHA = require("react-google-recaptcha")
 
 function ContactForm(props) {
     // eslint-disable-next-line 
@@ -115,7 +116,7 @@ function ContactForm(props) {
                             <TextField  name="message"  label="Message" multiline rows={4} placeholder="If you have any questions, you can send us a message!" variant="outlined" fullWidth />
                         </Grid>
                         <Grid xs={12} item>
-                            <reCAPTCHA sitekey={"6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG"} ref={captchaRef} />
+                            <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} />
                         </Grid>
                         <Grid xs={12} item>
                             <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
