@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/material';
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "../SchoolProblems";
 import ThankYouDialog from "./ThankYouDialog";
+import reCAPTCHA from "react-google-recaptcha"
 
 function ContactForm(props) {
     // eslint-disable-next-line 
     const [thankYouDialogOpened, setThankYouDialogOpened] = useState(false)
+    const captchaRef = useRef(null)
     
    // let clickCounter = 0
     // function upTheClickCounter() {
@@ -31,6 +33,9 @@ function ContactForm(props) {
        
         //console.log(section1);
         event.preventDefault()
+        const token = captchaRef.current.getValue();
+        captchaRef.current.reset()
+        console.log(token);
         const elementsArray = event.target.elements
         // console.log(elementsArray[0].value);
         // console.log(elementsArray[2].value);
@@ -108,6 +113,9 @@ function ContactForm(props) {
                         </Grid>
                         <Grid xs={12} item>
                             <TextField  name="message"  label="Message" multiline rows={4} placeholder="If you have any questions, you can send us a message!" variant="outlined" fullWidth />
+                        </Grid>
+                        <Grid xs={12} item>
+                            <reCAPTCHA sitekey={process.env.RECAPTCHA_SITE_KEY} ref={captchaRef} />
                         </Grid>
                         <Grid xs={12} item>
                             <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
