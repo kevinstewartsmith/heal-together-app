@@ -38,7 +38,7 @@ function ContactForm(props) {
         captchaRef.current.reset()
         console.log(token);
 
-        await axios.post(process.env.REACT_APP_API_URL, {token})
+        await axios.post("/postRecaptcha", {token})
         .then(res =>  console.log(res))
         .catch((error) => {
         console.log(error);
