@@ -41,7 +41,7 @@ function ContactForm(props) {
         let isHuman = "";
 
         await axios.post("/postRecaptcha", {token})
-        .then(res =>  console.log(JSON.stringify(res)))
+        .then(res =>  console.log(JSON.stringify(res.data)))
         .catch((error) => {
         console.log(error);
         })
