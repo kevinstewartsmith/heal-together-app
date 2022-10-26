@@ -45,7 +45,7 @@ function ContactForm(props) {
         .catch((error) => {
         console.log(error);
         })
-        console.log("user is a : " + isHuman);
+        console.log("user is a : " + typeof(isHuman));
         const elementsArray = event.target.elements
         // console.log(elementsArray[0].value);
         // console.log(elementsArray[2].value);
