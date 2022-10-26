@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import {Typography, Card, CardContent, Grid, TextField, Button} from '@mui/material';
 import {generalSchoolProblems, operationsProblems, supportProblems, curriculumProblems, physicalSafety} from "../SchoolProblems";
 import ThankYouDialog from "./ThankYouDialog";
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
 //onst reCAPTCHA = require("react-google-recaptcha")
 
 function ContactForm(props) {
