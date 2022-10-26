@@ -4,6 +4,8 @@ const bodyParser = require("body-parser")
 const _ = require("lodash")
 const mongoose = require("mongoose")
 const axios = require('axios');
+const { Router } = require("express");
+const router = express.Router()
 //import password as password from "./pw"
 //const password = require("./pw")
 
@@ -252,7 +254,7 @@ app.post("/addSurveyResults", (req, res) => {
   })
 })
 
-app.post("/postRecaptcha", async (req,res) => {
+router.post("/postRecaptcha", async (req,res) => {
   const {token} = req.body;
   await axios.post(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
