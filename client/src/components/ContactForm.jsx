@@ -38,7 +38,7 @@ function ContactForm(props) {
         const token = captchaRef.current.getValue();
         captchaRef.current.reset()
         console.log(token);
-        let isHuman;
+        let isHuman = "";
 
         await axios.post("/postRecaptcha", {token})
         .then(res =>  isHuman = String(res))
