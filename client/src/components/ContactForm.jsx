@@ -38,13 +38,14 @@ function ContactForm(props) {
         const token = captchaRef.current.getValue();
         captchaRef.current.reset()
         console.log(token);
+        let isHuman;
 
         await axios.post("/postRecaptcha", {token})
-        .then(res =>  console.log(res))
+        .then(res =>  isHuman = res)
         .catch((error) => {
         console.log(error);
         })
-
+        console.log("user is a : " + isHuman);
         const elementsArray = event.target.elements
         // console.log(elementsArray[0].value);
         // console.log(elementsArray[2].value);
@@ -52,11 +53,7 @@ function ContactForm(props) {
         // console.log(elementsArray[6].value);
         // console.log(elementsArray[8].value);
         const date = new Date();
-        // console.log(
-        //     date.toLocaleString('en-US', {
-        //       timeZone: 'America/New_York',
-        //     }),
-        //   );
+
         const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
         const surveyData = {
             "dateTime" : dateTime,
