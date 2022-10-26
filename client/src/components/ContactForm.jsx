@@ -30,13 +30,20 @@ function ContactForm(props) {
    console.log(typeof(generalSchoolProblems.problems));
    console.log(generalSchoolProblems.problems);
 
-    function submitClicked(event) {
+    async function submitClicked(event) {
        
         //console.log(section1);
         event.preventDefault()
         const token = captchaRef.current.getValue();
         captchaRef.current.reset()
         console.log(token);
+
+        await axios.post(process.env.REACT_APP_API_URL, {token})
+        .then(res =>  console.log(res))
+        .catch((error) => {
+        console.log(error);
+        })
+
         const elementsArray = event.target.elements
         // console.log(elementsArray[0].value);
         // console.log(elementsArray[2].value);
@@ -116,7 +123,7 @@ function ContactForm(props) {
                             <TextField  name="message"  label="Message" multiline rows={4} placeholder="If you have any questions, you can send us a message!" variant="outlined" fullWidth />
                         </Grid>
                         <Grid xs={12} item>
-                            <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} onChange={console.log("change re")}/>
+                            <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} />
                         </Grid>
                         <Grid xs={12} item>
                             <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
