@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require("body-parser")
 const _ = require("lodash")
 const mongoose = require("mongoose")
+const axios = require('axios');
 //import password as password from "./pw"
 //const password = require("./pw")
 
@@ -251,6 +252,21 @@ app.post("/addSurveyResults", (req, res) => {
   })
 })
 
+app.post("/postRecaptcha", async (req,res) => {
+  const {token} = req.body;
+  await axios.post(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
+  );
+
+  if (res.status(200)) {
+    res.send("Human 👨 👩");
+  } else {
+  res.send("Robot 🤖");
+  }
+
+
+
+})
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

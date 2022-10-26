@@ -116,7 +116,7 @@ function ContactForm(props) {
                             <TextField  name="message"  label="Message" multiline rows={4} placeholder="If you have any questions, you can send us a message!" variant="outlined" fullWidth />
                         </Grid>
                         <Grid xs={12} item>
-                            <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} />
+                            <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} onChange={console.log("change re")}/>
                         </Grid>
                         <Grid xs={12} item>
                             <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
