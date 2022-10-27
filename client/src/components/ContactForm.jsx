@@ -41,11 +41,11 @@ function ContactForm(props) {
         let isHuman = "";
 
         await axios.post("/postRecaptcha", {token})
-        .then(res =>  console.log(res.data))
+        .then(res =>  isHuman = res.data)
         .catch((error) => {
         console.log(error);
         })
-        console.log("user is a : " + isHuman === true);
+        console.log("user is a : " + isHuman.isHuman === true);
         const elementsArray = event.target.elements
         // console.log(elementsArray[0].value);
         // console.log(elementsArray[2].value);
