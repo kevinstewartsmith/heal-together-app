@@ -279,7 +279,7 @@ app.post("/postRecaptcha", async (req,res) => {
   //   res.json({isHuman: false});
   // }
   if (res.status(200)) {
-    res.send({isHuman: true})
+    res.send({isHuman: data.success})
   } else {
     res.send({isHuman: false})
   }
