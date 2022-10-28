@@ -83,13 +83,18 @@ function ContactForm(props) {
                 }
             }
 
-            dataDidSubmit = fetch('/addSurveyResults', {
+            fetch('/addSurveyResults', {
                 method: 'POST',
                 // We convert the React state to JSON and send it as the POST body
                 body: JSON.stringify(surveyData),
                 headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
         
-            }).then(function(response) {
+            }).then(res =>  console.log(res)).catch((error) => {
+                console.log(error);
+            })
+            
+            
+            .then(function(response) {
                 console.log("First Callback");
                 console.log(response )
                 return response.json();
