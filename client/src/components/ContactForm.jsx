@@ -53,7 +53,7 @@ function ContactForm(props) {
         //theUser.isHuman = false
         if (theUser.isHuman === true) {
             const elementsArray = event.target.elements
-
+            const responseJSON = {}
             const date = new Date();
 
             const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
@@ -84,9 +84,14 @@ function ContactForm(props) {
                 console.log("First Callback");
                 console.log(response )
                 return response.json();
-            }).then(function(response){ console.log(response) });
+            }).then(function(response){ responseJSON = response });
             
-            dataDidSubmit()
+            if (responseJSON.dataDidSubmit === true ) {
+                dataDidSubmit()
+            } else {
+                alert(responseJSON.status)
+            }
+            
         } else {
             console.log("Please redo the recaptcha")
             alert("Please complete the reCAPTCHA to prove you are not a robot.")
