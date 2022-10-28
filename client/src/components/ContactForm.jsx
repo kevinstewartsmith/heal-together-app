@@ -99,6 +99,7 @@ function ContactForm(props) {
             props.submitButtonClicked() 
         } else {
             console.log("Please redo the recaptcha")
+            alert("Please complete the recaptcha to prove you are not a robot.")
         }
 
     }
