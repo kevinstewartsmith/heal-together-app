@@ -89,20 +89,23 @@ function ContactForm(props) {
                 body: JSON.stringify(surveyData),
                 headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
         
-            }).then( function(res) {
-                return res.json()
-            }).then(res =>  dataDidSubmit = res.dataDidSubmit).catch((error) => {
-                console.log(error);
-            })
-            console.log("data:");
+            }).then(function(response) {
+                console.log("First Callback");
+                console.log(response )
+                return response.json();
+            }).then(function(response){ console.log(response) });
+            console.log("Data did submit");
             console.log(dataDidSubmit);
-            // .then(function(response) {
-            //     console.log("First Callback");
-            //     console.log(response )
-            //     return response.json();
-            // }).then(function(response){ console.log(response) });
-            // console.log("Data did submit");
+            
+            
+            // .then( function(res) {
+            //     return res.json()
+            // }).then(res =>  dataDidSubmit = res.dataDidSubmit).catch((error) => {
+            //     console.log(error);
+            // })
+            // console.log("data:");
             // console.log(dataDidSubmit);
+            
             
             if (dataDidSubmit.dataDidSubmit === true ) {
                 console.log("Data did submit:" + dataDidSubmit);
