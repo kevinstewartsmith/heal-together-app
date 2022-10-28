@@ -94,7 +94,7 @@ function ContactForm(props) {
                 console.log(response )
                 return response.json();
             }).then(function(response){ 
-                return response
+                console.log(response);
             }).catch((error) => {
                 console.log(error);
             });
