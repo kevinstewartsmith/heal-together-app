@@ -104,7 +104,7 @@ function ContactForm(props) {
             //     console.log(error);
             // });
             console.log("Data did submit");
-            console.log(dataDidSubmit);
+            console.log(resultsAdded);
             
             
             // .then( function(res) {
