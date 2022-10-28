@@ -206,7 +206,8 @@ app.post("/addSurveyResults", (req, res) => {
     } else {
       if (foundResults.length > 0) {
         res.json({
-          status: "Survey Results have aleady been added from this email address!"
+          status: "Survey Results have aleady been added from this email address!",
+          dataDidSubmit: false
         })
       } else {
         //START Add Results to database
@@ -258,7 +259,8 @@ app.post("/addSurveyResults", (req, res) => {
         newResponse.save()
 
         res.json({
-          status: "Successfully Addes Survey Data"
+          status: "Successfully Addes Survey Data",
+          dataDidSubmit: true
         })
       //ADD RESULTS TO DATABASE END
       }

@@ -53,11 +53,7 @@ function ContactForm(props) {
         //theUser.isHuman = false
         if (theUser.isHuman === true) {
             const elementsArray = event.target.elements
-            // console.log(elementsArray[0].value);
-            // console.log(elementsArray[2].value);
-            // console.log(elementsArray[4].value);
-            // console.log(elementsArray[6].value);
-            // console.log(elementsArray[8].value);
+
             const date = new Date();
 
             const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
@@ -90,18 +86,17 @@ function ContactForm(props) {
                 return response.json();
             }).then(function(response){ console.log(response) });
             
-            //console.log(surveyData);
-            window.localStorage.clear();
-            // submitClicked()
-            //setThankYouDialogOpened(!thankYouDialogOpened)
-            //upTheClickCounter()
-            //thankYou()
-            props.submitButtonClicked() 
+            dataDidSubmit()
         } else {
             console.log("Please redo the recaptcha")
             alert("Please complete the reCAPTCHA to prove you are not a robot.")
         }
 
+    }
+
+    function dataDidSubmit() {
+        window.localStorage.clear();
+        props.submitButtonClicked(); 
     }
 
     return (
