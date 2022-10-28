@@ -89,6 +89,8 @@ function ContactForm(props) {
                 body: JSON.stringify(surveyData),
                 headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
         
+            }).then( function() {
+                return res.json()
             }).then(res =>  console.log(res)).catch((error) => {
                 console.log(error);
             })
