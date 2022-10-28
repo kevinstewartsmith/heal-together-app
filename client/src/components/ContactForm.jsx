@@ -4,13 +4,14 @@ import {generalSchoolProblems, operationsProblems, supportProblems, curriculumPr
 import ThankYouDialog from "./ThankYouDialog";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
+require('dotenv').config()
 //onst reCAPTCHA = require("react-google-recaptcha")
 
 function ContactForm(props) {
     // eslint-disable-next-line 
     const [thankYouDialogOpened, setThankYouDialogOpened] = useState(false)
     const captchaRef = useRef(null)
-    
+    console.log(process.env.RECAPTCHA_SITE_KEY)
    // let clickCounter = 0
     // function upTheClickCounter() {
     //    clickCounter++
