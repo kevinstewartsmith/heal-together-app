@@ -96,6 +96,7 @@ function ContactForm(props) {
             }).then(function(response){ dataDidSubmit = response.dataDidSubmit });
             
             if (dataDidSubmit === true ) {
+                console.log("Data did submit:" + dataDidSubmit);
                 goToFinishPage()
             } else {
                 alert("Survey Results have aleady been added from this email address!")
