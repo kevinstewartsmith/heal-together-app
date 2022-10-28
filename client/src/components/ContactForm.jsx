@@ -83,7 +83,7 @@ function ContactForm(props) {
                 }
             }
 
-            fetch('/addSurveyResults', {
+            dataDidSubmit = fetch('/addSurveyResults', {
                 method: 'POST',
                 // We convert the React state to JSON and send it as the POST body
                 body: JSON.stringify(surveyData),
@@ -93,9 +93,11 @@ function ContactForm(props) {
                 console.log("First Callback");
                 console.log(response )
                 return response.json();
-            }).then(function(response){ dataDidSubmit = response.dataDidSubmit });
+            }).then(function(response){ console.log(response.dataDidSubmit) });
+            console.log("Data did submit");
+            console.log(dataDidSubmit);
             
-            if (dataDidSubmit === true ) {
+            if (dataDidSubmit.dataDidSubmit === true ) {
                 console.log("Data did submit:" + dataDidSubmit);
                 goToFinishPage()
             } else {
