@@ -260,13 +260,17 @@ app.post("/postRecaptcha", async (req,res) => {
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
   );
   
-  if (res.data.success === true) {
-  //if (res.status(200)) {
-    res.json({isHuman: true});
+  //if (res.data.success === true) {
+  // if (res.status(200)) {
+  //   res.json({isHuman: true});
+  // } else {
+  //   res.json({isHuman: false});
+  // }
+  if (res.status(200)) {
+    res.send(res.data)
   } else {
-    res.send({isHuman: false});
+    res.send(res.data)
   }
-
 
 
 })
