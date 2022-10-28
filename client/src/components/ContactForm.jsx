@@ -46,10 +46,10 @@ function ContactForm(props) {
         console.log(error);
         })
         console.log("User is a ");
-        console.log(theUser.isHuman == true);
+        console.log(theUser.isHuman === true);
         console.log(theUser);
 
-        if (theUser.isHuman == true) {
+        if (theUser.isHuman === true) {
             const elementsArray = event.target.elements
             // console.log(elementsArray[0].value);
             // console.log(elementsArray[2].value);
