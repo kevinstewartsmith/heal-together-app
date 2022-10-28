@@ -257,11 +257,12 @@ app.post("/addSurveyResults", (req, res) => {
 app.post("/postRecaptcha", async (req,res) => {
   const {token} = req.body;
   const data = await axios.post(
-    'https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}'
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
   );
 
 
-  // fetch('/addCollection', {
+  // fetch('https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}'
+  // , {
   //   method: 'POST',
   //   // We convert the React state to JSON and send it as the POST body
   //   body: JSON.stringify({"name": name, "description": description}),
