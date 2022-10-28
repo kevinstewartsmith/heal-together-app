@@ -197,61 +197,77 @@ app.post("/addSurveyResults", (req, res) => {
   const section4 = JSON.parse(data.answers.section4)
   const section5 = JSON.parse(data.answers.section5)
   const sectionsArr = [section1,section2,section3,section4,section5]
-  //console.log("not shit");
-  //console.log("length" + sectionsArr[0].length); 
-  console.log(data.answers)
-  let array = []
   
-  //console.log(sectionsArr[0][0].issue)
-  let issueArray = []
+  
+  //Responses.find({email: email})
+  Responses.find({email: email}, function(err,foundResults) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundResults.length > 0) {
+        res.json({
+          status: "Survey Results have aleady been added from this email address!"
+        })
+      } else {
+        //START Add Results to database
+      let array = []
+      //console.log(sectionsArr[0][0].issue)
+      let issueArray = []
 
-  for (let j = 0; j < sectionsArr.length; j++) {
-    
-    for (let i = 0; i < sectionsArr[j].length; i++) {
-      console.log(sectionsArr[i])
-      const newProblem = new Problem({
-        id_num: sectionsArr[j][i].id,
-        issue: sectionsArr[j][i].issue
-        
-      })
-    
-      newProblem.save()  
-      issueArray.push(newProblem)
+      //Add results to an array
+        for (let j = 0; j < sectionsArr.length; j++) {
+          
+          for (let i = 0; i < sectionsArr[j].length; i++) {
+            console.log(sectionsArr[i])
+            const newProblem = new Problem({
+              id_num: sectionsArr[j][i].id,
+              issue: sectionsArr[j][i].issue
+              
+            })
+      
+            newProblem.save()  
+            issueArray.push(newProblem)
+          }
+          array.push(issueArray)
+          issueArray = []
+        }
+        console.log("Bruh2");
+        console.log(array);
+
+        const newAnswer = new Answers({
+          section1: array[0],
+          section2: array[1],
+          section3: array[2],
+          section4: array[3],
+          section5: array[4]  
+        })
+
+        newAnswer.save()
+
+        const newResponse = new Responses({
+          date_time: dateTime,
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          phone: phone,
+          zip_code: zipCode,
+          message: message,
+          answers: newAnswer
+        })
+
+        newResponse.save()
+
+        res.json({
+          status: "Successfully Addes Survey Data"
+        })
+      //ADD RESULTS TO DATABASE END
+      }
     }
-    array.push(issueArray)
-    issueArray = []
-  }
-   console.log("Bruh2");
-   console.log(array);
-
-  const newAnswer = new Answers({
-    section1: array[0],
-    section2: array[1],
-    section3: array[2],
-    section4: array[3],
-    section5: array[4]  
-  })
-
-  newAnswer.save()
-
-  const newResponse = new Responses({
-    date_time: dateTime,
-    first_name: firstName,
-    last_name: lastName,
-    email: email,
-    phone: phone,
-    zip_code: zipCode,
-    message: message,
-    answers: newAnswer
-  })
-
-  newResponse.save()
+  }) 
+  
 
   
 
-  res.json({
-    status: "Successfully Addes Survey Data"
-  })
 })
 
 app.post("/postRecaptcha", async (req,res) => {
@@ -260,25 +276,6 @@ app.post("/postRecaptcha", async (req,res) => {
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
   );
 
-  //const data = response.json()
-  // fetch('https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}'
-  // , {
-  //   method: 'POST',
-  //   // We convert the React state to JSON and send it as the POST body
-  //   body: JSON.stringify({"name": name, "description": description}),
-  //   headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
-  // }).then(function(response) {
-  //   console.log(response)
-  //   return response.json();
-  // }).then(function(response){ console.log(response) });
-  
-  
-  //if (res.data.success === true) {
-  // if (res.status(200)) {
-  //   res.json({isHuman: true});
-  // } else {
-  //   res.json({isHuman: false});
-  // }
   const key = process.env.RECAPTCHA_SECRET_KEY
   if (res.status(200)) {
     res.json({isHuman: response.data.success})
