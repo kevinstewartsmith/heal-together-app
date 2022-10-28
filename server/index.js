@@ -256,11 +256,11 @@ app.post("/addSurveyResults", (req, res) => {
 
 app.post("/postRecaptcha", async (req,res) => {
   const {token} = req.body;
-  const data = await axios.post(
+  const response = await axios.post(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
   );
 
-
+  const data = response.json()
   // fetch('https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}'
   // , {
   //   method: 'POST',
