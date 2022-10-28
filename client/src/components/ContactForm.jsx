@@ -53,7 +53,7 @@ function ContactForm(props) {
         //theUser.isHuman = false
         if (theUser.isHuman === true) {
             const elementsArray = event.target.elements
-            const responseJSON = {}
+            const dataDidSubmit = {}
             const date = new Date();
 
             const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
@@ -84,10 +84,10 @@ function ContactForm(props) {
                 console.log("First Callback");
                 console.log(response )
                 return response.json();
-            }).then(function(response){ responseJSON = response });
+            }).then(function(response){ dataDidSubmit = response.dataDidSubmit });
             
-            if (responseJSON.dataDidSubmit === true ) {
-                dataDidSubmit()
+            if (dataDidSubmit === true ) {
+                goToFinishPage()
             } else {
                 alert("Survey Results have aleady been added from this email address!")
             }
@@ -99,7 +99,7 @@ function ContactForm(props) {
 
     }
 
-    function dataDidSubmit() {
+    function goToFinishPage() {
         window.localStorage.clear();
         props.submitButtonClicked(); 
     }
