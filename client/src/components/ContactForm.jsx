@@ -95,7 +95,7 @@ function ContactForm(props) {
                 console.log(error);
             })
             
-            
+            console.log("data: " + dataDidSubmit);
             // .then(function(response) {
             //     console.log("First Callback");
             //     console.log(response )
