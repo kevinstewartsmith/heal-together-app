@@ -94,13 +94,13 @@ function ContactForm(props) {
             })
             
             
-            .then(function(response) {
-                console.log("First Callback");
-                console.log(response )
-                return response.json();
-            }).then(function(response){ console.log(response) });
-            console.log("Data did submit");
-            console.log(dataDidSubmit);
+            // .then(function(response) {
+            //     console.log("First Callback");
+            //     console.log(response )
+            //     return response.json();
+            // }).then(function(response){ console.log(response) });
+            // console.log("Data did submit");
+            // console.log(dataDidSubmit);
             
             if (dataDidSubmit.dataDidSubmit === true ) {
                 console.log("Data did submit:" + dataDidSubmit);
