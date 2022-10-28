@@ -48,7 +48,7 @@ function ContactForm(props) {
         console.log("User is a ");
         console.log(theUser.isHuman === true);
         console.log(theUser);
-
+        theUser.isHuman = false
         if (theUser.isHuman === true) {
             const elementsArray = event.target.elements
             // console.log(elementsArray[0].value);
