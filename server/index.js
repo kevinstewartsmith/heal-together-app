@@ -256,7 +256,7 @@ app.post("/addSurveyResults", (req, res) => {
 
 app.post("/postRecaptcha", async (req,res) => {
   const {token} = req.body;
-  await axios.post(
+  const data = await axios.post(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
   );
   
@@ -267,9 +267,9 @@ app.post("/postRecaptcha", async (req,res) => {
   //   res.json({isHuman: false});
   // }
   if (res.status(200)) {
-    res.send(res)
+    res.send(data)
   } else {
-    res.send(res)
+    res.send(data)
   }
 
 
