@@ -56,7 +56,7 @@ function ContactForm(props) {
         //theUser.isHuman = false
         if (theUser.isHuman === true) {
             const elementsArray = event.target.elements
-            const dataDidSubmit = {}
+            let dataDidSubmit = {}
             const date = new Date();
 
             const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
