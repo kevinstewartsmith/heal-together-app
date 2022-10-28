@@ -89,7 +89,7 @@ function ContactForm(props) {
             if (responseJSON.dataDidSubmit === true ) {
                 dataDidSubmit()
             } else {
-                alert(responseJSON.status)
+                alert("Survey Results have aleady been added from this email address!")
             }
             
         } else {
