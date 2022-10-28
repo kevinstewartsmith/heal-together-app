@@ -260,7 +260,7 @@ app.post("/postRecaptcha", async (req,res) => {
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
   );
 
-  const data = response.json()
+  //const data = response.json()
   // fetch('https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}'
   // , {
   //   method: 'POST',
