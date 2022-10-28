@@ -94,8 +94,8 @@ function ContactForm(props) {
             }).then(res =>  dataDidSubmit = res.dataDidSubmit).catch((error) => {
                 console.log(error);
             })
-            
-            console.log("data: " + dataDidSubmit);
+            console.log("data:");
+            console.log(dataDidSubmit);
             // .then(function(response) {
             //     console.log("First Callback");
             //     console.log(response )
