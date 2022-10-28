@@ -201,7 +201,7 @@ app.post("/addSurveyResults", (req, res) => {
   //console.log("length" + sectionsArr[0].length); 
   console.log(data.answers)
   let array = []
-  console.log("dawg");
+  
   //console.log(sectionsArr[0][0].issue)
   let issueArray = []
 
