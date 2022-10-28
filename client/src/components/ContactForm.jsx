@@ -126,7 +126,7 @@ function ContactForm(props) {
                             <TextField name="phone"  type="number" label="Phone" placeholder="Enter phone number" variant="outlined" fullWidth />
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField name="zipCode"  type="number" label="Zip Code" placeholder="Enter zip code" variant="outlined" fullWidth required />
+                            <TextField name="zipCode"  type="number" label="Zip Code (XXXXX or XXXXX-XXXX)" placeholder="Enter zip code" variant="outlined" fullWidth required />
                         </Grid>
                         <Grid xs={12} item>
                             <TextField  name="message"  label="Message" multiline rows={4} placeholder="If you have any questions, you can send us a message!" variant="outlined" fullWidth />
