@@ -41,7 +41,7 @@ function ContactForm(props) {
         let theUser = "";
 
         await axios.post("/postRecaptcha", {token})
-        .then(res =>  theUser = res.data)
+        .then(res =>  console.log(res.data))
         .catch((error) => {
         console.log(error);
         })
