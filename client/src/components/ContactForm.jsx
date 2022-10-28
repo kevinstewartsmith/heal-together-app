@@ -38,62 +38,67 @@ function ContactForm(props) {
         const token = captchaRef.current.getValue();
         captchaRef.current.reset()
         console.log(token);
-        let isHuman = "";
+        let theUser = "";
 
         await axios.post("/postRecaptcha", {token})
-        .then(res =>  isHuman = res.data)
+        .then(res =>  theUser = res.data)
         .catch((error) => {
         console.log(error);
         })
         console.log("User is a ");
-        console.log(isHuman.isHuman == true);
-        console.log(isHuman);
+        console.log(theUser.isHuman == true);
+        console.log(theUser);
 
-        const elementsArray = event.target.elements
-        // console.log(elementsArray[0].value);
-        // console.log(elementsArray[2].value);
-        // console.log(elementsArray[4].value);
-        // console.log(elementsArray[6].value);
-        // console.log(elementsArray[8].value);
-        const date = new Date();
+        if (theUser.isHuman == true) {
+            const elementsArray = event.target.elements
+            // console.log(elementsArray[0].value);
+            // console.log(elementsArray[2].value);
+            // console.log(elementsArray[4].value);
+            // console.log(elementsArray[6].value);
+            // console.log(elementsArray[8].value);
+            const date = new Date();
 
-        const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
-        const surveyData = {
-            "dateTime" : dateTime,
-            "firstName" : elementsArray[0].value,
-            "lastName" :  elementsArray[2].value,
-            "email" : elementsArray[4].value,
-            "phone" : elementsArray[6].value,
-            "zipCode" : elementsArray[8].value,
-            "message" : elementsArray[10].value,
-            "answers": {
-                "section1": section1,
-                "section2": section2,
-                "section3": section3,
-                "section4": section4,
-                "section5": section5 
+            const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
+            const surveyData = {
+                "dateTime" : dateTime,
+                "firstName" : elementsArray[0].value,
+                "lastName" :  elementsArray[2].value,
+                "email" : elementsArray[4].value,
+                "phone" : elementsArray[6].value,
+                "zipCode" : elementsArray[8].value,
+                "message" : elementsArray[10].value,
+                "answers": {
+                    "section1": section1,
+                    "section2": section2,
+                    "section3": section3,
+                    "section4": section4,
+                    "section5": section5 
+                }
             }
+
+            fetch('/addSurveyResults', {
+                method: 'POST',
+                // We convert the React state to JSON and send it as the POST body
+                body: JSON.stringify(surveyData),
+                headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
+        
+            }).then(function(response) {
+                console.log("First Callback");
+                console.log(response )
+                return response.json();
+            }).then(function(response){ console.log(response) });
+            
+            //console.log(surveyData);
+            window.localStorage.clear();
+            // submitClicked()
+            //setThankYouDialogOpened(!thankYouDialogOpened)
+            //upTheClickCounter()
+            //thankYou()
+            props.submitButtonClicked() 
+        } else {
+            console.log("Please redo the recaptcha")
         }
 
-        fetch('/addSurveyResults', {
-            method: 'POST',
-            // We convert the React state to JSON and send it as the POST body
-            body: JSON.stringify(surveyData),
-            headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
-    
-          }).then(function(response) {
-            console.log("First Callback");
-            console.log(response )
-            return response.json();
-          }).then(function(response){ console.log(response) });
-        
-        //console.log(surveyData);
-        window.localStorage.clear();
-       // submitClicked()
-       //setThankYouDialogOpened(!thankYouDialogOpened)
-       //upTheClickCounter()
-       //thankYou()
-       props.submitButtonClicked() 
     }
 
     return (
