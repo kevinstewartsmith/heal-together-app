@@ -91,7 +91,7 @@ function ContactForm(props) {
         
             }).then( function(res) {
                 return res.json()
-            }).then(res =>  console.log(res)).catch((error) => {
+            }).then(res =>  dataDidSubmit = res.dataDidSubmit).catch((error) => {
                 console.log(error);
             })
             
