@@ -281,7 +281,7 @@ app.post("/postRecaptcha", async (req,res) => {
   // }
   const key = process.env.RECAPTCHA_SECRET_KEY
   if (res.status(200)) {
-    res.json({isHuman: key})
+    res.json({isHuman: true})
   } else {
     res.json({isHuman: false})
   }
