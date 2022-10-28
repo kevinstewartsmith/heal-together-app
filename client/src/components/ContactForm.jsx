@@ -93,7 +93,11 @@ function ContactForm(props) {
                 console.log("First Callback");
                 console.log(response )
                 return response.json();
-            }).then(function(response){ console.log(response) });
+            }).then(function(response){ 
+                console.log(response) 
+            }).catch((error) => {
+                console.log(error);
+            });
             console.log("Data did submit");
             console.log(dataDidSubmit);
             
