@@ -4,8 +4,10 @@ import {generalSchoolProblems, operationsProblems, supportProblems, curriculumPr
 import ThankYouDialog from "./ThankYouDialog";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
+
 require('dotenv').config()
 //onst reCAPTCHA = require("react-google-recaptcha")
+var isValidZip = require('is-valid-zip');
 
 function ContactForm(props) {
     // eslint-disable-next-line 
@@ -36,6 +38,7 @@ function ContactForm(props) {
        
         //console.log(section1);
         event.preventDefault()
+
         const token = captchaRef.current.getValue();
         captchaRef.current.reset()
         console.log(token);
@@ -57,6 +60,12 @@ function ContactForm(props) {
             const date = new Date();
 
             const dateTime = date.toLocaleString('en-US', { timeZone: 'America/New_York'})
+            if (isValidZip (elementsArray[8].value)) {
+
+            } else {
+                alert("Please enter a valid zip code.")
+            }
+
             const surveyData = {
                 "dateTime" : dateTime,
                 "firstName" : elementsArray[0].value,
