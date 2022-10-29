@@ -19,12 +19,12 @@ import { positions } from '@mui/system';
 export default function LanguageMode() {
 
     const [engSelected, setEngSelected] = useState(false);
-    
+
     return (
         <div className="language-mode" >
-            <div onClick={ console.log("eng clicked")}><h5 style={{textDecoration: 'underline', display: 'inline'}}  >ENG</h5></div>
+            <div onClick={ console.log("eng clicked")} style={{ display: 'inline'}} ><h5 style={{textDecoration: 'underline', display: 'inline'}}  >ENG</h5></div>
             <div><h5 style={{display: 'inline'}} >|</h5></div>
-            <div onClick={ console.log("esp clicked")}><h5 style={{display: 'inline' }}  >ESP</h5></div>
+            <div onClick={ console.log("esp clicked")} style={{ display: 'inline'}}><h5 style={{display: 'inline' }}  >ESP</h5></div>
         </div>  
     )
 }
