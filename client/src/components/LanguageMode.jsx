@@ -16,7 +16,7 @@ import { positions } from '@mui/system';
 
 
 
-export default function LanguageMode() {
+export default function LanguageMode(props) {
     const [engSelected, setEngSelected] = useState(true);
     
     let engCSS = {
@@ -42,6 +42,8 @@ export default function LanguageMode() {
         } else if (id === "eng" && !engSelected){
             setEngSelected(!engSelected)
         }
+
+        props.switchLanguage()
     }
 
     return (
