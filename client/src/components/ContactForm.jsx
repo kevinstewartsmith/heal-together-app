@@ -108,7 +108,7 @@ function ContactForm(props) {
             //     console.log(error);
             // });
             console.log("Data did submit");
-            console.log(resultsAdded);
+            //console.log(resultsAdded);
             const submitted = postResults(surveyData)
             
             // .then( function(res) {
