@@ -64,6 +64,7 @@ function ContactForm(props) {
 
             } else {
                 alert("Please enter a valid zip code.")
+                return
             }
 
             const surveyData = {
