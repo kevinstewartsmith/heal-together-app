@@ -15,5 +15,5 @@ import Typography from '@mui/material/Typography';
 
 
 export default function LanguageMode() {
-    return (<div className="language-mode"><h3 style={{textDecoration: 'underline'}}>ENG</h3> | <h5>ESP</h5></div>  )
+    return (<div className="language-mode"><h5 style={{textDecoration: 'underline'}}>ENG</h5><h5>|</h5><h5>ESP</h5></div>  )
 }
