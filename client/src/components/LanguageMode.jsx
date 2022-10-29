@@ -21,11 +21,16 @@ export default function LanguageMode() {
     
     let engCSS = {
         textDecoration: engSelected ? 'underline' : 'none', 
-        display: 'inline'
+        display: 'inline',
+        color:  '#af8bf8',
+        fontSize: engSelected ? '2.0rem':'1.5rem'
+        
     }
     let espCSS = {
         textDecoration: !engSelected ? 'underline' : 'none',
-        display: 'inline'
+        display: 'inline',
+        color:  '#af8bf8',
+        fontSize: engSelected ? '2.0rem':'1.5rem'
     }
 
     
