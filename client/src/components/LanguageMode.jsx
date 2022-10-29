@@ -31,7 +31,7 @@ export default function LanguageMode() {
         const { name, value, id } = event.target;
         console.log("Button tapped: " + id);
         if (id === "esp") {
-            engCSS.textDecoration = none
+            engCSS.textDecoration = 'none'
             espCSS.textDecoration = 'underline'
         }
     }
