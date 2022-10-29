@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState,  useEffect } from "react";
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -12,9 +12,16 @@ import Typography from '@mui/material/Typography';
 import { positions } from '@mui/system';
 
 
+const [engSelected, setEngSelected] = useState(false);
 
 
 
 export default function LanguageMode() {
-    return (<div className="language-mode"><h5 style={{textDecoration: 'underline', display: 'inline'}}>ENG</h5><h5 style={{display: 'inline'}}>|</h5><h5 style={{display: 'inline' }}>ESP</h5></div>  )
+    return (
+        <div className="language-mode">
+            <h5 style={{textDecoration: 'underline', display: 'inline'}} onClick={ console.log("eng clicked")} >ENG</h5>
+            <h5 style={{display: 'inline'}} >|</h5>
+            <h5 style={{display: 'inline' }} onClick={ console.log("esp clicked")} >ESP</h5>
+        </div>  
+    )
 }
