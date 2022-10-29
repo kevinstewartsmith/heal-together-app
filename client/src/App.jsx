@@ -129,6 +129,7 @@ function App() {
             <header>
                 {/* <h1 style={{ fontSize: sizes.header }} >Back <p style={{color:"red", display:"inline", fontSize: sizes.header }}>2</p> School Quick Survey</h1> */}
                <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}> <img src={healHeader} style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '30%'}} alt="Logo" /></div>
+               <div className="language-mode">ENG | ESP</div>    
                 {/* <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
                     <Image
                         source={healHeader}
@@ -138,6 +139,7 @@ function App() {
                 </View> */}
             </header>
                 <div className="choices">
+               
                 { currentSection !== 7 ?
                     <div className="progress-container">
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
