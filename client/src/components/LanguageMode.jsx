@@ -12,11 +12,14 @@ import Typography from '@mui/material/Typography';
 import { positions } from '@mui/system';
 
 
-const [engSelected, setEngSelected] = useState(false);
+
 
 
 
 export default function LanguageMode() {
+
+    const [engSelected, setEngSelected] = useState(false);
+    
     return (
         <div className="language-mode" >
             <div onClick={ console.log("eng clicked")}><h5 style={{textDecoration: 'underline', display: 'inline'}}  >ENG</h5></div>
