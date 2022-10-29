@@ -142,7 +142,7 @@ function ContactForm(props) {
     async function postResults(surveyData) {
         //let status;
         let status = await axios.post("/addSurveyResults", {surveyData})
-        .then(res => return status = res.data.dataDidSubmit)
+        .then(res => { return res.data.dataDidSubmit })
         .catch((error) => {
         console.log(error);
         })
