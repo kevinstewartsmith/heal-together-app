@@ -9,11 +9,12 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import { positions } from '@mui/system';
 
 
 
 
 
 export default function LanguageMode() {
-    return (<div className="language-mode"><h5 style={{textDecoration: 'underline'}}>ENG</h5><h5>|</h5><h5>ESP</h5></div>  )
+    return (<div className="language-mode"><h5 style={{textDecoration: 'underline', position: 'inline'}}>ENG</h5><h5 style={{position: 'inline'}}>|</h5><h5 style={{position: 'inline' }}>ESP</h5></div>  )
 }
