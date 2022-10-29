@@ -73,9 +73,7 @@ export default function StartDialog() {
           <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>Welcome to the Back2School Quick Survey!</Typography>
         </BootstrapDialogTitle>
         <DialogContent dividers >
-          <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
-            Choose Language: ENG | ESP
-          </Typography>
+          
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }}>
             Thanks for taking time to fill out the Back2School quick survey. We'll make this quick! 
           </Typography>
@@ -84,6 +82,9 @@ export default function StartDialog() {
           </Typography>
           <Typography gutterBottom>
             
+          </Typography>
+          <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
+            Choose Language: ENG | ESP
           </Typography>
         </DialogContent>
         <DialogActions>
