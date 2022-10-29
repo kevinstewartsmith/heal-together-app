@@ -182,6 +182,7 @@ app.get('/results/:api', (req, res) => {
 });
 
 app.post("/addSurveyResults", (req, res) => {
+  //const {token} = req.body;
   const data = req.body
   const dateTime = data.dateTime
   const firstName = data.firstName

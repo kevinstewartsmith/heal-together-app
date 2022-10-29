@@ -83,22 +83,22 @@ function ContactForm(props) {
                 }
             }
 
-            const resultsAdded = fetch('/addSurveyResults', {
-                method: 'POST',
-                // We convert the React state to JSON and send it as the POST body
-                body: JSON.stringify(surveyData),
-                headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
+            // const resultsAdded = fetch('/addSurveyResults', {
+            //     method: 'POST',
+            //     // We convert the React state to JSON and send it as the POST body
+            //     body: JSON.stringify(surveyData),
+            //     headers: {"Content-Type": "application/json", 'Accept': 'application/json'}//{
         
-            }).then(function(response) {
-                console.log("First Callback");
-                console.log(response )
-                //return response.json();
-            }).then(function(response){ 
-                console.log(response);
-                return response.json();
-            }).catch((error) => {
-                console.log(error);
-            });
+            // }).then(function(response) {
+            //     console.log("First Callback");
+            //     console.log(response )
+            //     //return response.json();
+            // }).then(function(response){ 
+            //     console.log(response);
+            //     return response.json();
+            // }).catch((error) => {
+            //     console.log(error);
+            // });
             
             // .then(function(response){ 
             //     console.log(response) 
@@ -109,7 +109,7 @@ function ContactForm(props) {
             // });
             console.log("Data did submit");
             console.log(resultsAdded);
-            
+            const submitted = postResults(surveyData)
             
             // .then( function(res) {
             //     return res.json()
@@ -138,6 +138,16 @@ function ContactForm(props) {
         window.localStorage.clear();
         props.submitButtonClicked(); 
     }
+
+    async function postResults(surveyData) {
+        await axios.post("/addSurveyResults", {surveyData})
+        .then(res =>  console.log(res))
+        .catch((error) => {
+        console.log(error);
+        })
+    }
+
+
 
     return (
         <div className="contact-form">
