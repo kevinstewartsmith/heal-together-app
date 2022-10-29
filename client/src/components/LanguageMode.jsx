@@ -15,5 +15,5 @@ import Typography from '@mui/material/Typography';
 
 
 export default function LanguageMode() {
-    return (<div className="language-mode">ENG | ESP</div>  )
+    return (<div className="language-mode"><h3>ENG</h3> | <h3>ESP</h3></div>  )
 }
