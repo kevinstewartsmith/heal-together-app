@@ -18,10 +18,10 @@ const [engSelected, setEngSelected] = useState(false);
 
 export default function LanguageMode() {
     return (
-        <div className="language-mode">
-            <div><h5 style={{textDecoration: 'underline', display: 'inline'}} onClick={ console.log("eng clicked")} >ENG</h5></div>
+        <div className="language-mode" >
+            <div onClick={ console.log("eng clicked")}><h5 style={{textDecoration: 'underline', display: 'inline'}}  >ENG</h5></div>
             <div><h5 style={{display: 'inline'}} >|</h5></div>
-            <div><h5 style={{display: 'inline' }} onClick={ console.log("esp clicked")} >ESP</h5></div>
+            <div onClick={ console.log("esp clicked")}><h5 style={{display: 'inline' }}  >ESP</h5></div>
         </div>  
     )
 }
