@@ -109,7 +109,7 @@ function ContactForm(props) {
             // });
             console.log("Data did submit");
             //console.log(resultsAdded);
-            const submitted = postResults(surveyData)
+            const submitted = await postResults(surveyData)
             console.log(submitted);
             // .then( function(res) {
             //     return res.json()
