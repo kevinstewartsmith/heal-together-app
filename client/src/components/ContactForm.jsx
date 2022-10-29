@@ -146,7 +146,7 @@ function ContactForm(props) {
         .catch((error) => {
         console.log(error);
         })
-
+        console.log(status);
         return status
     }
 
