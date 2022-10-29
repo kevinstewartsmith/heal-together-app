@@ -89,7 +89,7 @@ const schoolProblems = [
 export const generalSchoolProblems = {
     "title": { 
         eng: "General School Problems",
-        esp: "Sección 1: Problemas generales de la escuela"
+        esp: "Problemas Generales de la Escuela"
     },
     "problems":  [
         
@@ -119,7 +119,10 @@ export const generalSchoolProblems = {
    
 
 export const operationsProblems = {
-    "title": "Operational Problems",
+    "title": {
+        eng: "Operational Problems",
+        esp: "Problemas Operativos"
+    },
     "problems": [
 
         {
@@ -147,7 +150,10 @@ export const operationsProblems = {
 
 
 export const supportProblems = {
-    "title": "Support Problems",
+    "title": {
+        eng: "Support Problems",
+        esp: "Problemas de Soporte"
+    },
     "problems": [
         {
             id: "10",
@@ -175,7 +181,10 @@ export const supportProblems = {
 
 
 export const curriculumProblems = {
-    "title": "Curricular Problems",
+    "title": {
+        eng: "Curricular Problems",
+        esp: "Problemas Curriculares"
+    },
     "problems": [
         {
             id: "15",
@@ -194,7 +203,10 @@ export const curriculumProblems = {
 
 
 export const physicalSafety = {
-    "title": "Physical Safety",
+    "title": {
+       eng: "Physical Safety",
+       esp: "Seguridad Física"
+    },
     "problems": [
 
         {
