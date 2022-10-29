@@ -87,7 +87,10 @@ const schoolProblems = [
 ]
 
 export const generalSchoolProblems = {
-    "title": "General School Problems",
+    "title": { 
+        eng: "General School Problems",
+        esp: "Sección 1: Problemas generales de la escuela"
+    },
     "problems":  [
         
         {

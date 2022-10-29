@@ -18,6 +18,7 @@ import LanguageMode from "./components/LanguageMode";
 
 
 function App() {
+    const [engSelected, setEngSelected] = useState(true);
     console.log(window.innerWidth)
     const windowWidth = window.innerWidth
 
@@ -125,6 +126,7 @@ function App() {
 
     function switchLanguage() {
         console.log("switch");
+        setEngSelected(!engSelected)
     }
 
     const [progress, setProgress] = useState(0);
@@ -168,7 +170,7 @@ function App() {
                     </div> : null }
                     
                     {currentSection < 6 && currentSection !== 7 ? 
-                        <h2  className="section-header">Section {currentSection + ": " + sectionTitles[currentSection]}</h2>
+                        <h2  className="section-header"> {engSelected ? ("Section" + currentSection + ": " + sectionTitles[currentSection].eng) : ("Sección" + + currentSection + ": " + sectionTitles[currentSection].esp)}</h2>
                             :
                         <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}><h2  className="section-header" style={{fontSize: "2.5em"}}>FINISHED!</h2></div>
                     }
