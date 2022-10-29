@@ -32,7 +32,9 @@ export default function LanguageMode() {
     function changeLanguage(event) {
         const { name, value, id } = event.target;
         console.log("Button tapped: " + id);
-        if (id === "esp") {
+        if (id === "esp" && engSelected) {
+            setEngSelected(!engSelected)
+        } else if (id === "eng" && !engSelected){
             setEngSelected(!engSelected)
         }
     }
