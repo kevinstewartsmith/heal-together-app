@@ -22,7 +22,7 @@ export default function LanguageMode() {
         display: 'inline'
     }
     let espCSS = {
-        textDecoration: 'underline',
+        textDecoration: 'none',
         display: 'inline'
     }
 
