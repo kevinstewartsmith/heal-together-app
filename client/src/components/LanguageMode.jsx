@@ -17,22 +17,23 @@ import { positions } from '@mui/system';
 
 
 export default function LanguageMode() {
+    const [engSelected, setEngSelected] = useState(true);
+    
     let engCSS = {
-        textDecoration: 'underline', 
+        textDecoration: engSelected ? 'underline' : 'none', 
         display: 'inline'
     }
     let espCSS = {
-        textDecoration: 'none',
+        textDecoration: !engSelected ? 'underline' : 'none',
         display: 'inline'
     }
 
-    const [engSelected, setEngSelected] = useState(false);
+    
     function changeLanguage(event) {
         const { name, value, id } = event.target;
         console.log("Button tapped: " + id);
         if (id === "esp") {
-            engCSS.textDecoration = 'none'
-            espCSS.textDecoration = 'underline'
+            setEngSelected(!engSelected)
         }
     }
 
