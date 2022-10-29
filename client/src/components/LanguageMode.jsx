@@ -30,7 +30,7 @@ export default function LanguageMode() {
         textDecoration: !engSelected ? 'underline' : 'none',
         display: 'inline',
         color:  '#af8bf8',
-        fontSize: engSelected ? '2.0rem':'1.5rem'
+        fontSize: engSelected ? '1.5rem':'2.0rem'
     }
 
     
