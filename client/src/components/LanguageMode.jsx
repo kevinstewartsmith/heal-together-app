@@ -16,5 +16,5 @@ import { positions } from '@mui/system';
 
 
 export default function LanguageMode() {
-    return (<div className="language-mode"><h5 style={{textDecoration: 'underline', position: 'inline'}}>ENG</h5><h5 style={{position: 'inline'}}>|</h5><h5 style={{position: 'inline' }}>ESP</h5></div>  )
+    return (<div className="language-mode"><h5 style={{textDecoration: 'underline', display: 'inline'}}>ENG</h5><h5 style={{display: 'inline'}}>|</h5><h5 style={{display: 'inline' }}>ESP</h5></div>  )
 }
