@@ -22,9 +22,9 @@ export default function LanguageMode() {
 
     return (
         <div className="language-mode" >
-            <div style={{ display: 'inline'}} ><h5 style={{textDecoration: 'underline', display: 'inline'}} onClick={ console.log("eng clicked")} >ENG</h5></div>
-            <div><h5 style={{display: 'inline'}} >|</h5></div>
-            <div style={{ display: 'inline'}}><h5 style={{display: 'inline' }} onClick={ console.log("esp clicked")} >ESP</h5></div>
+            <h5 style={{textDecoration: 'underline', display: 'inline'}} onClick={ console.log("eng clicked")} >ENG</h5>
+            <h5 style={{display: 'inline'}} >|</h5>
+            <h5 style={{display: 'inline' }} onClick={ console.log("esp clicked")} >ESP</h5>
         </div>  
     )
 }
