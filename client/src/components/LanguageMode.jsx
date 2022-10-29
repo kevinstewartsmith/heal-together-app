@@ -9,3 +9,11 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+
+
+
+
+
+export default function LanguageMode() {
+    return (<div className="language-mode">ENG | ESP</div>  )
+}
