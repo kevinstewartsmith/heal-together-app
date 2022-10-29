@@ -124,3 +124,12 @@ header h1 {
 .percent {
   padding-left: 5px;
 }
+
+.language-mode {
+  color:  #af8bf8;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 1.5rem;
+  position: fixed;
+  right: 0.5vw;
+  top: 0.5vh;
+}
