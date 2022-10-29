@@ -120,7 +120,7 @@ function ContactForm(props) {
             // console.log(dataDidSubmit);
             
             
-            if (dataDidSubmit.dataDidSubmit === true ) {
+            if (submitted === true ) {
                 console.log("Data did submit:" + dataDidSubmit);
                 goToFinishPage()
             } else {
