@@ -17,18 +17,30 @@ import { positions } from '@mui/system';
 
 
 export default function LanguageMode() {
+    let engCSS = {
+        textDecoration: 'underline', 
+        display: 'inline'
+    }
+    let espCSS = {
+        textDecoration: 'underline',
+        display: 'inline'
+    }
 
     const [engSelected, setEngSelected] = useState(false);
     function changeLanguage(event) {
         const { name, value, id } = event.target;
         console.log("Button tapped: " + id);
+        if (id === "esp") {
+            engCSS.textDecoration = none
+            espCSS.textDecoration = 'underline'
+        }
     }
 
     return (
         <div className="language-mode" >
-            <div style={{ display: 'inline'}} ><h5 id="eng" style={{textDecoration: 'underline', display: 'inline'}} onClick={changeLanguage} >ENG</h5></div>
+            <div style={{ display: 'inline'}} ><h5 id="eng" style={engCSS} onClick={changeLanguage} >ENG</h5></div>
             <div  style={{display: 'inline'}} ><h5 style={{display: 'inline'}} > | </h5></div>
-            <div style={{ display: 'inline'}}><h5 id="esp" style={{display: 'inline' }} onClick={changeLanguage} >ESP</h5></div>
+            <div style={{ display: 'inline'}}><h5 id="esp" style={espCSS} onClick={changeLanguage} >ESP</h5></div>
         </div>  
     )
 }
