@@ -172,7 +172,7 @@ function App() {
                     {currentSection < 6 && currentSection !== 7 ? 
                         <h2  className="section-header"> {engSelected ? ("Section " + currentSection + ": " + sectionTitles[currentSection].eng) : ("Sección " + currentSection + ": " + sectionTitles[currentSection].esp)}</h2>
                             :
-                        <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}><h2  className="section-header" style={{fontSize: "2.5em"}}>FINISHED!</h2></div>
+                        <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}><h2  className="section-header" style={{fontSize: "2.5em"}}>{engSelected ? "FINISHED!" : "¡COMPLETA!"}</h2></div>
                     }
                     {currentSection === 7 ?
                         <Typography variant="h5" color="text.primary" sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window.</Typography> : null
