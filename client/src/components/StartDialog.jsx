@@ -75,7 +75,7 @@ export default function StartDialog(props) {
         </BootstrapDialogTitle>
         <DialogContent dividers >
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
-            Choose Language: <LanguageMode switchLanguage={props.switchLanguage} /> 
+            Choose Language: <LanguageMode switchLanguage={props.switchLanguage} engSelected={props.engSelected} /> 
           </Typography>
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }}>
             Thanks for taking time to fill out the Back2School quick survey. We'll make this quick! 
