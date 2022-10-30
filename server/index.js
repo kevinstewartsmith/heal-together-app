@@ -132,6 +132,7 @@ const responseSchema = mongoose.Schema({
   }
 })
 
+const Language = mongoose.model("language", languageSchema);
 const Problem = mongoose.model("problem", problemSchema);
 //const Section = mongoose.model("section", sectionSchema);
 const Answers = mongoose.model("answer", answerSchema);
@@ -232,9 +233,15 @@ app.post("/addSurveyResults", (req, res) => {
           
           for (let i = 0; i < sectionsArr[j].length; i++) {
             console.log(sectionsArr[i])
+            const issueLanguages = new Language({
+              eng: sectionsArr[j][i].issue.eng,
+              esp: sectionsArr[j][i].issue.esp
+            })
+            issueLanguages.save()
             const newProblem = new Problem({
               id_num: sectionsArr[j][i].id,
-              issue: sectionsArr[j][i].issue
+              issue: issueLanguages
+              //issue: sectionsArr[j][i].issue
               
             })
       
