@@ -137,7 +137,7 @@ function App() {
                 {/* <h1 style={{ fontSize: sizes.header }} >Back <p style={{color:"red", display:"inline", fontSize: sizes.header }}>2</p> School Quick Survey</h1> */}
                <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}> <img src={healHeader} style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '30%'}} alt="Logo" /></div>
                {/* <div className="language-mode">ENG | ESP</div>   */}
-               <LanguageMode switchLanguage={switchLanguage} engSelected={engSelected} /> 
+               <LanguageMode switchLanguage={switchLanguage} engSelected={engSelected} position={"language-mode-header"} /> 
                 {/* <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
                     <Image
                         source={healHeader}

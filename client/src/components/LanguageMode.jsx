@@ -18,8 +18,8 @@ import { positions } from '@mui/system';
 
 export default function LanguageMode(props) {
     //const [engSelected, setEngSelected] = useState(true);
-    const headerVersion = "language-mode" 
-    
+    const headerVersion = "language-mode-header" 
+    const position = props.position
     let engCSS = {
         textDecoration: props.engSelected ? 'underline' : 'none', 
         display: 'inline',
