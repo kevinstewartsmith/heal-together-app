@@ -234,8 +234,8 @@ app.post("/addSurveyResults", (req, res) => {
           for (let i = 0; i < sectionsArr[j].length; i++) {
             console.log(sectionsArr[i])
             const issueLanguages = new Language({
-              eng: sectionsArr[j][i].issue.eng,
-              esp: sectionsArr[j][i].issue.esp
+              eng: sectionsArr[j][i].issue["eng"],
+              esp: sectionsArr[j][i].issue["esp"]
             })
             issueLanguages.save()
             const newProblem = new Problem({
