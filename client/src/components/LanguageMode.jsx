@@ -48,7 +48,7 @@ export default function LanguageMode(props) {
     }
 
     return (
-        <div className={headerVersion} >
+        <div className={position} >
             <div style={{ display: 'inline'}} ><h5 id="eng" style={engCSS} onClick={changeLanguage} >ENG</h5></div>
             <div  style={{display: 'inline'}} ><h5 style={{display: 'inline'}} > | </h5></div>
             <div style={{ display: 'inline'}}><h5 id="esp" style={espCSS} onClick={changeLanguage} >ESP</h5></div>
