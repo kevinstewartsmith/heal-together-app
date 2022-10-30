@@ -170,16 +170,16 @@ function ContactForm(props) {
                             <TextField name="lName"  label={ props.engSelected ? "Last Name" : "Apellida" } placeholder={props.engSelected ? "Enter last name" : "Escriba la apellida" } variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField name="email"  type="email" label="Email" placeholder="Enter email" variant="outlined" fullWidth required/>
+                            <TextField name="email"  type="email" label="Email" placeholder={ props.engSelected ? "Enter email" : "Escriba email" } variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField name="phone"  type="number" label={ props.engSelected ? "Phone" : "teléfono" } placeholder={ engSelected ? "Enter phone number" : "Escriba numero de teléfono" } variant="outlined" fullWidth />
+                            <TextField name="phone"  type="number" label={ props.engSelected ? "Phone" : "teléfono" } placeholder={ props.engSelected ? "Enter phone number" : "Escriba numero de teléfono" } variant="outlined" fullWidth />
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField name="zipCode"  type="number" label={ props.engSelected ? "Zip Code (XXXXX or XXXXX-XXXX)" : "Código Postal (XXXXX o XXXXX-XXXX)" } placeholder={ engSelected ? "Enter zip code" : "Escriba código postal"} variant="outlined" fullWidth required />
+                            <TextField name="zipCode"  type="number" label={ props.engSelected ? "Zip Code (XXXXX or XXXXX-XXXX)" : "Código Postal (XXXXX o XXXXX-XXXX)" } placeholder={ props.engSelected ? "Enter zip code" : "Escriba código postal"} variant="outlined" fullWidth required />
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField  name="message"  label={engSelected ? "Message" : "Mensaje"} multiline rows={4} placeholder={ engSelected ? "If you have any questions, you can send us a message!" : "Si tienes alguna pregunta, ¡puedes enviarnos un mensaje!" } variant="outlined" fullWidth />
+                            <TextField  name="message"  label={props.engSelected ? "Message" : "Mensaje"} multiline rows={4} placeholder={ props.engSelected ? "If you have any questions, you can send us a message!" : "Si tienes alguna pregunta, ¡puedes enviarnos un mensaje!" } variant="outlined" fullWidth />
                         </Grid>
                         <Grid xs={12} item>
                             <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} />

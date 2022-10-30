@@ -90,7 +90,7 @@ export default function StartDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>Let's Do This!</Typography>
+          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>{props.engSelected ? "Let's Do This!" : "¡Vamos!" }</Typography>
           </Button>
         </DialogActions>
       </BootstrapDialog>
