@@ -134,3 +134,10 @@ header h1 {
   top: 0.5vh;
   
 }
+
+.language-mode-start {
+  color:  #af8bf8;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 1.5rem;
+  display: inline;
+}
