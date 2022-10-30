@@ -240,7 +240,7 @@ function App() {
                     
                 </div>
 
-                <StartDialog  />
+                <StartDialog switchLanguage={switchLanguage}  />
                 
 
         </div>
