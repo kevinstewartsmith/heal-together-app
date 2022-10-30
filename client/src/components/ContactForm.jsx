@@ -164,7 +164,7 @@ function ContactForm(props) {
                 <form onSubmit={submitClicked}>
                     <Grid container spacing={1}>
                         <Grid  xs={12} small={6} item>
-                            <TextField name="fName"  label="First Name" placeholder="Enter first name" variant="outlined"  fullWidth required/>
+                            <TextField name="fName"  label={engSelected ? "First Name" : "Primer Nombre"} placeholder={engSelected ? "Enter first name" : "Escriba Primer nombre"} variant="outlined"  fullWidth required/>
                         </Grid>
                         <Grid  xs={12} small={6} item>
                             <TextField name="lName"  label="Last Name" placeholder="Enter last name" variant="outlined" fullWidth required/>
