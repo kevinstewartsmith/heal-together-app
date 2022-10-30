@@ -129,5 +129,8 @@ header h1 {
   color:  #af8bf8;
   font-family: 'Paytone One', sans-serif;
   font-size: 1.5rem;
+  position: absolute;
+  right: 1.0vw;
+  top: 0.5vh;
   
 }
