@@ -52,13 +52,24 @@ const surveyResponses = {
   }
 }
 //DATABASE START
+const languageSchema = mongoose.Schema({
+  eng: {
+    type: String,
+    required: true
+  },
+  esp: {
+    type: String,
+    required: true
+  }
+});
+
 const problemSchema = mongoose.Schema({
   id_num: {
     type: String,
     required: true
   },
   issue: {
-    type: String,
+    type: languageSchema,
     required: true
   }
 });
