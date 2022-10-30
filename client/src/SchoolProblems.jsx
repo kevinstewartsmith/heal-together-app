@@ -139,26 +139,41 @@ export const operationsProblems = {
         esp: "Problemas Operativos"
     },
     "problems": [
-
+        
         {
             id: "5",
-            issue: "The physical condition of the builings present health concerns and/or lack of accessibility."
+            issue: {
+                eng: "The physical condition of the builings present health concerns and/or lack of accessibility.",
+                esp: "La condición física de los edificios presenta problemas para la salud y/o falta de accesibilidad."
+            }
         },
         {
             id: "6",
-            issue: "Students do not have enough access to nutritional food."
+            issue: {
+                eng: "Students do not have enough access to nutritional food.",
+                esp: "Hay estudiantes que no tienen suficiente acceso a alimentos nutritivos."
+            }
         },
         {
             id: "7",
-            issue: "Transportation challenges for students."
+            issue: {
+                eng: "Transportation challenges for students.",
+                esp: "El transporte supone un desafío para los estudiantes."
+            }
         },
         {
             id: "8",
-            issue: "Students do not feel valued, respected, or cared for at their schools."
+            issue: {
+                eng: "Students do not feel valued, respected, or cared for at their schools.",
+                esp: "Los estudiantes no se sienten valorados, respetados y cuidados en sus escuelas."
+            }
         },
         {
             id: "9",
-            issue: "Students lack access to basic health services."
+            issue: {
+                eng: "Students lack access to basic health services.",
+                esp: "Los estudiantes carecen de acceso a los servicios básicos de salud."
+            }
         },
     ]
 }
@@ -170,25 +185,41 @@ export const supportProblems = {
         esp: "Problemas de Soporte"
     },
     "problems": [
+
         {
             id: "10",
-            issue: "Lack of mental health support for students."
+            issue: {
+                eng: "Lack of mental health support for students.",
+                esp: "Falta de apoyo de salud mental para los estudiantes."
+            }
         },
         {
             id: "11",
-            issue: "There is not enough support for students with disabilties."
+            issue: {
+                eng: "There is not enough support for students with disabilties.",
+                esp: "No hay suficiente apoyo para los estudiantes con discapacidades."
+            }
         },
         {
             id: "12",
-            issue: "There is not enough support for English Language Learners and immigrant families."
+            issue: {
+                eng: "There is not enough support for English Language Learners and immigrant families.",
+                esp: "No hay suficiente apoyo para quienes están aprendiendo el idioma inglés y familias inmigrantes."
+            }
         },
         {
             id: "13",
-            issue: "Low wages for parents are negatively impacting students."
+            issue: {
+                eng: "Low wages for parents are negatively impacting students.",
+                esp: "Los bajos salarios de los padres están afectando negativamente a los estudiantes."
+            }
         },
         {
             id: "14",
-            issue: "Students lack access to safe and healthy housing."
+            issue: {
+                eng: "Students lack access to safe and healthy housing.",
+                esp: "Los estudiantes carecen de acceso a viviendas seguras y saludables."
+            }
         },
     ]
 }
@@ -201,17 +232,27 @@ export const curriculumProblems = {
         esp: "Problemas Curriculares"
     },
     "problems": [
+
         {
             id: "15",
-            issue: "There are not enough arts, sports, music, enrichment, afterschool and summer programs."
+            issue: {
+                eng: "There are not enough arts, sports, music, enrichment, afterschool and summer programs.",
+                esp: "Aumentar el acceso a las artes, los deportes, el enriquecimiento, los programas para después de la escuela y de verano para todos los estudiantes."
+            }
         },
         {
             id: "16",
-            issue: "The books and curriculum students learn don't reflect student's identities and interests."
+            issue: {
+                eng: "The books and curriculum students learn don't reflect student's identities and interests.",
+                esp: "Los libros y el plan de estudios que aprenden los estudiantes no reflejan las identidades y los intereses de los estudiantes."
+            }
         },
         {
             id: "17",
-            issue: "Negative impacts of efforts to ban books and attacks on curriculum teaching honest history."
+            issue: {
+                eng: "Negative impacts of efforts to ban books and attacks on curriculum teaching honest history.",
+                esp: "Impactos negativos de las medidas que buscan prohibir libros y de los ataques al plan de estudios que enseña una historia honesta."
+            }
         },
     ]
 }
@@ -226,15 +267,24 @@ export const physicalSafety = {
 
         {
             id: "18",
-            issue: "There are fears and/or threats of violence at school."
+            issue: {
+                eng: "There are fears and/or threats of violence at school.",
+                esp: "Hay temores y/o amenazas de violencia en la escuela."
+            }
         },
         {
             id: "19",
-            issue: "There are fears and/or threats of violence as a result of a lack of gun safety."
+            issue: {
+                eng: "There are fears and/or threats of violence as a result of a lack of gun safety.",
+                esp: "Hay temores y/o amenazas de violencia como resultado de la falta de seguridad en relación con las armas de fuego."
+            }
         },
         {
             id: "20",
-            issue: "There are concerns about having police in schools and how students are treated by them."
+            issue: {
+                eng: "There are concerns about having police in schools and how students are treated by them.",
+                esp: "Hay preocupaciones acerca de tener policías en las escuelas y cómo estos tratan a los estudiantes."
+            }
         },
     
     ]
