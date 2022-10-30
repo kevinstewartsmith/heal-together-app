@@ -9,6 +9,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import LanguageMode from './LanguageMode';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -48,7 +49,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function StartDialog() {
+export default function StartDialog(props) {
   const [open, setOpen] = React.useState(true);
 
   // const handleClickOpen = () => {
@@ -74,7 +75,7 @@ export default function StartDialog() {
         </BootstrapDialogTitle>
         <DialogContent dividers >
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
-            Choose Language: <LanguageMode switchLanguage={switchLanguage} /> 
+            Choose Language: <LanguageMode switchLanguage={props.switchLanguage} /> 
           </Typography>
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }}>
             Thanks for taking time to fill out the Back2School quick survey. We'll make this quick! 
