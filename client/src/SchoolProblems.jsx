@@ -92,26 +92,41 @@ export const generalSchoolProblems = {
         esp: "Problemas Generales de la Escuela"
     },
     "problems":  [
-        
+
         {
             id: "0",
-            issue: "Class sizes are too large."
+            issue: {
+                eng: "Class sizes are too large.",
+                esp: "El tamaño de las clases es muy grande."
+            }
         },
         {
             id: "1",
-            issue: "Our school district is under-funded."
+            issue: {
+                eng: "Our school district is under-funded.",
+                esp: "Nuestro distrito escolar tiene fondos insuficientes."
+            }
         },
         {
             id: "2",
-            issue: "High turnover of teachers/educators."
+            issue: {
+                eng: "High turnover of teachers/educators.",
+                esp: "Alta rotación de maestros/educadores."
+            }
         },
         {
             id: "3",
-            issue: "Low pay for teachers/educators."
+            issue: {
+                eng: "Low pay for teachers/educators.",
+                esp: "Bajos salarios para maestros/trabajadores de la educación."
+            }
         },
         {
             id: "4",
-            issue: "There is a need for more educators and staff that represent the diversity of the student body."
+            issue: {
+                eng: "There is a need for more educators and staff that represent the diversity of the student body.",
+                esp: "Hay una necesidad de más educadores y de personal que represente la diversidad de los estudiantes."
+            }
         }
 
     ]
