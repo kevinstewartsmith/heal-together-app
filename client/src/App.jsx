@@ -223,7 +223,7 @@ function App() {
                                 
                                 </Droppable>
                             </DragDropContext>
-                            : currentSection !== 7 ? <ContactForm submitButtonClicked={submitButtonClicked} /> : null}
+                            : currentSection !== 7 ? <ContactForm submitButtonClicked={submitButtonClicked} engSelected={engSelected}/> : null}
                     
                     {currentSection > 1 && currentSection !== 7 ?
                         <div className="left-arrow"><div className="left-arrow-div"><Fab color="primary"  sx={{ backgroundColor:"#7b9ee4", width: 80, height: 80}} onClick={leftArrowClicked}><ArrowBackIosIcon sx={{ marginLeft: 4, fontSize: 80, color:"white"}} color="primary" onClick={rightArrowClicked}/></Fab></div></div>

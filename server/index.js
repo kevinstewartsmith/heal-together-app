@@ -102,6 +102,10 @@ const responseSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  language: {
+    type: String,
+    required: true
+  },
   first_name: {
     type: String,
     required: true
@@ -204,6 +208,7 @@ app.post("/addSurveyResults", (req, res) => {
   const zipCode = data.zipCode
   const message = data.message
   const answers = data.answers
+  const language = data.language
   const section1 = JSON.parse(data.answers.section1)
   const section2 = JSON.parse(data.answers.section2)
   const section3 = JSON.parse(data.answers.section3)
@@ -266,6 +271,7 @@ app.post("/addSurveyResults", (req, res) => {
 
         const newResponse = new Responses({
           date_time: dateTime,
+          language: language,
           first_name: firstName,
           last_name: lastName,
           email: email,

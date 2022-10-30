@@ -69,6 +69,7 @@ function ContactForm(props) {
 
             const surveyData = {
                 "dateTime" : dateTime,
+                "language" : props.engSelected ? "english" : "espanol",
                 "firstName" : elementsArray[0].value,
                 "lastName" :  elementsArray[2].value,
                 "email" : elementsArray[4].value,
