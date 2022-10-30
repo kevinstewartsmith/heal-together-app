@@ -18,19 +18,19 @@ import { positions } from '@mui/system';
 
 export default function LanguageMode(props) {
     //const [engSelected, setEngSelected] = useState(true);
+    const headerVersion = "language-mode" 
     
     let engCSS = {
         textDecoration: props.engSelected ? 'underline' : 'none', 
         display: 'inline',
         color:  '#af8bf8',
-        fontSize: props.engSelected ? '2.0rem':'1.5rem'
-        
+        fontSize: props.engSelected ? '2.0rem':'1.5rem',
     }
     let espCSS = {
         textDecoration: !props.engSelected ? 'underline' : 'none',
         display: 'inline',
         color:  '#af8bf8',
-        fontSize: props.engSelected ? '1.5rem':'2.0rem'
+        fontSize: props.engSelected ? '1.5rem':'2.0rem',
     }
 
     
@@ -48,7 +48,7 @@ export default function LanguageMode(props) {
     }
 
     return (
-        <div className="language-mode" >
+        <div className={headerVersion} >
             <div style={{ display: 'inline'}} ><h5 id="eng" style={engCSS} onClick={changeLanguage} >ENG</h5></div>
             <div  style={{display: 'inline'}} ><h5 style={{display: 'inline'}} > | </h5></div>
             <div style={{ display: 'inline'}}><h5 id="esp" style={espCSS} onClick={changeLanguage} >ESP</h5></div>
