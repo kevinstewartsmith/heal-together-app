@@ -17,20 +17,20 @@ import { positions } from '@mui/system';
 
 
 export default function LanguageMode(props) {
-    const [engSelected, setEngSelected] = useState(true);
+    //const [engSelected, setEngSelected] = useState(true);
     
     let engCSS = {
-        textDecoration: engSelected ? 'underline' : 'none', 
+        textDecoration: props.switchLanguage ? 'underline' : 'none', 
         display: 'inline',
         color:  '#af8bf8',
-        fontSize: engSelected ? '2.0rem':'1.5rem'
+        fontSize: props.switchLanguage ? '2.0rem':'1.5rem'
         
     }
     let espCSS = {
-        textDecoration: !engSelected ? 'underline' : 'none',
+        textDecoration: !props.switchLanguage ? 'underline' : 'none',
         display: 'inline',
         color:  '#af8bf8',
-        fontSize: engSelected ? '1.5rem':'2.0rem'
+        fontSize: props.switchLanguage ? '1.5rem':'2.0rem'
     }
 
     
