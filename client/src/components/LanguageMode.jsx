@@ -37,10 +37,10 @@ export default function LanguageMode(props) {
     function changeLanguage(event) {
         const { name, value, id } = event.target;
         console.log("Button tapped: " + id);
-        if (id === "esp" && engSelected) {
-            setEngSelected(!engSelected)
+        if (id === "esp" && props.engSelected) {
+            setEngSelected(!props.engSelected)
         } else if (id === "eng" && !engSelected){
-            setEngSelected(!engSelected)
+            setEngSelected(!props.engSelected)
         }
 
         props.switchLanguage()
