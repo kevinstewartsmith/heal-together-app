@@ -206,7 +206,7 @@ function App() {
                                                                             {/* <FavoriteIcon /> */}
                                                                         </IconButton>
                                                                     }
-                                                                    title={<h3>{ engSelected ? issue.eng : issue.esp }</h3>}
+                                                                    title={<h3 style={{color: "black"}}>{ engSelected ? issue.eng : issue.esp }</h3>}
                                                                     
                                                                 />
 
