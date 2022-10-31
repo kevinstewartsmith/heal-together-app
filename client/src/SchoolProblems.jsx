@@ -143,7 +143,7 @@ export const operationsProblems = {
         {
             id: "5",
             issue: {
-                eng: "The physical condition of the builings present health concerns and/or lack of accessibility.",
+                eng: "The physical condition of the buildings present health concerns and/or lack of accessibility.",
                 esp: "La condición física de los edificios presenta problemas para la salud y/o falta de accesibilidad."
             }
         },
