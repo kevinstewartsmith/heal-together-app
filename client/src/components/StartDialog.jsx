@@ -71,17 +71,23 @@ export default function StartDialog(props) {
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose} >
           
-          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>Welcome to the Back2School Quick Survey!</Typography>
+          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>{
+            props.engSelected ? "Welcome to the Back2School Quick Survey!" 
+            : "Bienvenidx a la encuesta rápida de Back2School (regreso a la escuela)"}
+          </Typography>
         </BootstrapDialogTitle>
         <DialogContent dividers >
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
-            Choose Language: <LanguageMode switchLanguage={props.switchLanguage} engSelected={props.engSelected} position={"language-mode-start"} /> 
+            { props.switchLanguage ? "Choose Language: " 
+            : "Selecciona Tu Idioma" } <LanguageMode switchLanguage={props.switchLanguage} engSelected={props.engSelected} position={"language-mode-start"} /> 
           </Typography>
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }}>
-            Thanks for taking time to fill out the Back2School quick survey. We'll make this quick! 
+            { props.engSelected ? "Thanks for taking time to fill out the Back2School quick survey. We'll make this quick!" 
+            : "Gracias por tomarse el tiempo de completar la encuesta de Back2School. ¡Esto va a ser rápido!" }
           </Typography>
           <Typography gutterBottom sx={{color: "#A6A9B6",fontFamily: 'Paytone One' }}>
-          Simply drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.
+            {props.engSelected ?  "Simply drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom." 
+            : "Simplemente arrastra las cajas con los asuntos escolares en orden de importancia. Los más importantes van encima y los menos importantes hacia abajo."}
           </Typography>
           <Typography gutterBottom>
             

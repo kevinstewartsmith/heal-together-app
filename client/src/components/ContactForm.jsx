@@ -159,7 +159,7 @@ function ContactForm(props) {
             {/* <p className="section-header">Thanks for your input! We want to make public schools better for all student, parents, and staff. YOU can contribute to big and small ways to this movemnt. Please submit the form below.</p> */}
             <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}}>
                 <CardContent>
-                <Typography gutterBottom variant="h5" >Submission Form</Typography>
+                <Typography gutterBottom variant="h5" >{ props.engSelected ? "Submission Form" : "Formato de Solicitud" }</Typography>
                 <Typography gutterBottom color="textSecondary" variant="body2" component="p">Thanks for your input! We want to make public schools better for all students, parents, and staff. YOU can contribute in big and small ways to this movement. Please submit the form below.</Typography>
                 <form onSubmit={submitClicked}>
                     <Grid container spacing={1}>
@@ -185,7 +185,7 @@ function ContactForm(props) {
                             <ReCAPTCHA sitekey="6LdUfakiAAAAAPqnz4Oqjb-Q2cztmD98RUq_NBIG" ref={captchaRef} />
                         </Grid>
                         <Grid xs={12} item>
-                            <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
+                            <Button type="submit" variant="contained" color="primary" fullWidth>{ props.engSelected ? "Submit" : "Completar" }</Button>
                         </Grid>
                     </Grid>
                 </form>
