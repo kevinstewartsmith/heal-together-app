@@ -14,6 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 import CountUp from 'react-countup';
 import healHeader from './heal-header.png';
 import LanguageMode from "./components/LanguageMode";
+import { PromiseProvider } from "mongoose";
 //import { color } from "@mui/system";
 
 
@@ -175,7 +176,10 @@ function App() {
                         <div style={{backgroundColor: "clear", display: "flex", justifyContent: "center"}}><h2  className="section-header" style={{fontSize: "2.5em"}}>{engSelected ? "FINISHED!" : "¡COMPLETA!"}</h2></div>
                     }
                     {currentSection === 7 ?
-                        <Typography variant="h5" color="text.primary" sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window.</Typography> : null
+                        <Typography variant="h5" color="text.primary" sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
+                        { props.engSelected ? "Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window."
+                        : "Gracias nuevamente por compartir tus opiniones. Hay muchas maneras en las que puedes ayudar a mejorar las escuelas publicas en Carolina del Norte. Alguien va a estar en contacto contigo pronto. Puedes cerrar esta ventana." }
+                        </Typography> : null
                     }
                     {currentSection > 0 && currentSection < 6 ?  
                             <DragDropContext onDragEnd={handleOnDragEnd} >
