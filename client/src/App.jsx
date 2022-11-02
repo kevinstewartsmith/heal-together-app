@@ -177,8 +177,7 @@ function App() {
                     }
                     {currentSection === 7 ?
                         <Typography variant="h5" color="text.primary" sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
-                        { engSelected ? "Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window."
-                        : "Gracias nuevamente por compartir tus opiniones. Hay muchas maneras en las que puedes ayudar a mejorar las escuelas publicas en Carolina del Norte. Alguien va a estar en contacto contigo pronto. Puedes cerrar esta ventana." }
+                        { engSelected ? "Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window." : "Gracias nuevamente por compartir tus opiniones. Hay muchas maneras en las que puedes ayudar a mejorar las escuelas publicas en Carolina del Norte. Alguien va a estar en contacto contigo pronto. Puedes cerrar esta ventana." }
                         </Typography> : null
                     }
                     {currentSection > 0 && currentSection < 6 ?  
