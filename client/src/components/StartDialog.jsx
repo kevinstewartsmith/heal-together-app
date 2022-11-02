@@ -71,7 +71,7 @@ export default function StartDialog(props) {
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose} >
           
-          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>Welcome to the Back2School Quick Survey!</Typography>
+          <Typography sx={{ fontFamily: 'Paytone One' , color: "#af8bf8", fontSize: "1.5rem" }}>{ props.engSelected ? "Welcome to the Back2School Quick Survey!" : "Bienvenidx a la encuesta rápida de Back2School (regreso a la escuela)" }</Typography>
         </BootstrapDialogTitle>
         <DialogContent dividers >
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
