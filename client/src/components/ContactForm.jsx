@@ -160,7 +160,7 @@ function ContactForm(props) {
             <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}}>
                 <CardContent>
                 <Typography gutterBottom variant="h5" >Submission Form</Typography>
-                <Typography gutterBottom color="textSecondary" variant="body2" component="p">Thanks for your input! We want to make public schools better for all students, parents, and staff. YOU can contribute in big and small ways to this movement. Please submit the form below.</Typography>
+                <Typography gutterBottom color="textSecondary" variant="body2" component="p">{ props.engSelected ? "Thanks for your input! We want to make public schools better for all students, parents, and staff. YOU can contribute in big and small ways to this movement. Please submit the form below." : "¡Gracias por su tiempo! Queremos mejorar las escuelas para todxs lxs estudiantes, padres, y empleados. Tú puedes contribuir en maneras grandes y pequeñas a este movimiento. Por favor completa el formulario abajo."}</Typography>
                 <form onSubmit={submitClicked}>
                     <Grid container spacing={1}>
                         <Grid  xs={12} small={6} item>
