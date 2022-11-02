@@ -161,9 +161,7 @@ function ContactForm(props) {
                 <CardContent>
                 <Typography gutterBottom variant="h5" >{ props.engSelected ? "Submission Form" : "Formato de Solicitud" }</Typography>
                 <Typography gutterBottom color="textSecondary" variant="body2" component="p">{ 
-                    props.engSelected ? 
-                    "Thanks for your input! We want to make public schools better for all students, parents, and staff. YOU can contribute in big and small ways to this movement. Please submit the form below." : 
-                    "¡Gracias por su tiempo! Queremos mejorar las escuelas para todxs lxs estudiantes, padres, y empleados. Tú puedes contribuir en maneras grandes y pequeñas a este movimiento. Por favor completa el formulario abajo."}
+                    props.engSelected ? "Thanks for your input! We want to make public schools better for all students, parents, and staff. YOU can contribute in big and small ways to this movement. Please submit the form below." : "¡Gracias por su tiempo! Queremos mejorar las escuelas para todxs lxs estudiantes, padres, y empleados. Tú puedes contribuir en maneras grandes y pequeñas a este movimiento. Por favor completa el formulario abajo."}
                 </Typography>
                 <form onSubmit={submitClicked}>
                     <Grid container spacing={1}>
