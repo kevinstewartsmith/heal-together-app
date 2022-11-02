@@ -75,7 +75,7 @@ export default function StartDialog(props) {
         </BootstrapDialogTitle>
         <DialogContent dividers >
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >
-            Choose Language: <LanguageMode switchLanguage={props.switchLanguage} engSelected={props.engSelected} position={"language-mode-start"} /> 
+            Language/Idioma: <LanguageMode switchLanguage={props.switchLanguage} engSelected={props.engSelected} position={"language-mode-start"} /> 
           </Typography>
           <Typography gutterBottom sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }}>
             {props.engSelected ? "Thanks for taking time to fill out the Back2School quick survey. We'll make this quick!" : "Gracias por tomarse el tiempo de completar la encuesta de Back2School. ¡Esto va a ser rápido!"} 
