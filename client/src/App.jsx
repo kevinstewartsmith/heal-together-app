@@ -180,7 +180,7 @@ function App() {
                     }
                     {currentSection > 0 && currentSection < 6 ?  
                         <div>
-                        <h4>Drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.</h4>
+                        <h4 className="drag-instructions">Drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.</h4>
                             <DragDropContext onDragEnd={handleOnDragEnd} >
                                 <Droppable droppableId="issues">
                                     
