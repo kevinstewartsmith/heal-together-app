@@ -169,6 +169,7 @@ function App() {
                         </Box>
                     </div> : null }
                     
+                    <h4>Drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.</h4>
                     {currentSection < 6 && currentSection !== 7 ? 
                         <h2  className="section-header"> {engSelected ? ("Section " + currentSection + ": " + sectionTitles[currentSection].eng) : ("Sección " + currentSection + ": " + sectionTitles[currentSection].esp)}</h2>
                             :
