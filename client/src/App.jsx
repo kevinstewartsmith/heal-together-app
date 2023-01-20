@@ -169,7 +169,7 @@ function App() {
                         </Box>
                     </div> : null }
                     
-                    <h4>Drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.</h4>
+                    
                     {currentSection < 6 && currentSection !== 7 ? 
                         <h2  className="section-header"> {engSelected ? ("Section " + currentSection + ": " + sectionTitles[currentSection].eng) : ("Sección " + currentSection + ": " + sectionTitles[currentSection].esp)}</h2>
                             :
@@ -179,6 +179,8 @@ function App() {
                         <Typography variant="h5" color="text.primary" sx={{ color: "#A6A9B6", fontFamily: 'Paytone One' }} >{ engSelected ? "Thanks again for your input! There are plenty of ways you can support NC public schools. Someone will be in touch with you soon. You may close this window." : "Gracias nuevamente por compartir tus opiniones. Hay muchas maneras en las que puedes ayudar a mejorar las escuelas publicas en Carolina del Norte. Alguien va a estar en contacto contigo pronto. Puedes cerrar esta ventana."}</Typography> : null
                     }
                     {currentSection > 0 && currentSection < 6 ?  
+                        <div>
+                        <h4>Drag and drop the school issues in order of importance. Most important issues go on the top. Least important go on the bottom.</h4>
                             <DragDropContext onDragEnd={handleOnDragEnd} >
                                 <Droppable droppableId="issues">
                                     
@@ -224,6 +226,7 @@ function App() {
                                 
                                 </Droppable>
                             </DragDropContext>
+                            </div>
                             : currentSection !== 7 ? <ContactForm submitButtonClicked={submitButtonClicked} engSelected={engSelected}/> : null}
                     
                     {currentSection > 1 && currentSection !== 7 ?
